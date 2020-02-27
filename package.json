@@ -1,0 +1,20 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "scripts": {
+    "build": "gridsome build",
+    "develop": "gridsome develop",
+    "explore": "gridsome explore"
+  },
+  "dependencies": {
+    "gridsome": "^0.7.0"
+  },
+  "devDependencies": {
+    "node-fetch": "^2.6.0",
+    "date-fns": "^2.9.0",
+    "node-html-parser": "^1.2.6",
+    "node-sass": "^4.13.1",
+    "normalize.css": "^8.0.1",
+    "sass-loader": "^8.0.2"
+  }
+}

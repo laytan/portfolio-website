@@ -1,0 +1,28 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black|Roboto&display=swap');
+
+// Icon pack of populair development logos
+@import './devicon.css';
+@import './devicon-colors.css';
+
+@import './variables';
+@import './buttons';
+
+body {
+  font-family: 'Roboto', 'sans-serif';
+  color: #e2f3f5;
+  background: #03090c;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $header-font;
+}
+
+a {
+  color: #cdf8ff;
+  text-decoration: none;
+}
+
+i {
+  color: $accent;
+}

@@ -1,0 +1,20 @@
+.btn {
+  color: $text;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: .5rem 1rem;
+  background: $primary;
+  border-radius: 2px;
+  border: none;
+  letter-spacing: .1rem;
+  margin-right: 2rem;
+  font-family: $text-font;
+
+  &--secondary {
+    background: $secondary;
+  }
+
+  &--accent {
+    background: $accent;
+  }
+}
