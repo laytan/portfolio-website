@@ -14,7 +14,7 @@ export default {
     title: 'Hello, world!'
   },
   components: {
-    GithubProjects,
+    // GithubProjects,
     HeaderHome,
   }
 }
