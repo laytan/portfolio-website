@@ -1,35 +1,6 @@
 <template>
   <header class="header">
-    <nav>
-      <ul>
-        <div>
-          <li class="nav__brand">
-            <g-image src="~/images/logo.svg"></g-image>
-          </li>
-          <li class="active">
-            <a href="/">Projects</a>
-          </li>
-          <li>
-            <a href="/">Contact</a>
-          </li>
-          <li>
-            <a href="/resume-laytan-laats.pdf" target="_BLANK">Resume</a>
-          </li>
-        </div>
-        <div>
-          <li>
-            <a href="https://github.com/laytan" rel="noopener noreferrer" target="_BLANK">
-              <i class="devicon-github-plain header__icon"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://linkedin.com/in/laytan" rel="noopener noreferrer" target="_BLANK">
-              <g-image src="~/images/linkedin-sign.svg" class="header__icon"></g-image>
-            </a>
-          </li>
-        </div>
-      </ul>
-    </nav>
+    <navigation></navigation>
     <div class="header__1">
       <div>
         <h2>Software Developer</h2>
@@ -59,13 +30,21 @@
 </template>
 
 <script>
-export default {
+import Navigation from './Navigation.vue';
 
+export default {
+  components: {
+    Navigation,
+  },
 }
 </script>
 
 <style scoped lang="scss">
 @import '../styles/_variables';
+
+nav {
+  grid-column: span 6;
+}
 
 .header {
   display: grid;
@@ -73,13 +52,6 @@ export default {
   grid-template-rows: min-content auto;
   height: 100vh;
   align-items: center;
-
-  &__icon {
-    font-size: 2rem;
-    max-width: 2rem;
-    max-height: 2rem;
-    vertical-align: middle;
-  }
 
   &__logo {
     display: flex;
@@ -95,46 +67,6 @@ export default {
     img {
       margin-right: 0rem;
       max-height: 5.5rem;
-    }
-  }
-
-  > nav {
-    grid-row: 1;
-    grid-column: span 6;
-
-    .nav__brand {
-      img {
-        max-height: 2.5rem;
-      }
-    }
-
-    ul {
-      list-style-type: none;
-      display: flex;
-      justify-content: space-between;
-
-      div {
-        display: flex;
-        align-items: center;
-
-        li {
-          margin-right: 1rem;
-
-          a {
-            color: $text;
-            padding: .25rem 0;
-            transition: .1s ease-in-out color;
-          }
-
-          &:hover a {
-            color: rgba($text, .8);
-          }
-
-          &.active a {
-            border-bottom: 1px solid $accent;
-          }
-        }
-      }
     }
   }
 
