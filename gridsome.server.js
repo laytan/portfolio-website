@@ -9,7 +9,7 @@ const GITHUB_USERNAME = 'laytan';
 
 module.exports = function (api) {
   api.loadSource(async ({ addCollection }) => {    
-    // Initialize a collection to add our reposz to
+    // Initialize a collection to add our repos to
     const collection = addCollection({
       typeName: 'Repo',
     });
