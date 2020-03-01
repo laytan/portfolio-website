@@ -1,17 +1,20 @@
 <template>
   <Layout>
-    <h1>{{ $page.project.title }}</h1>
-    <ul>
-      <li v-for="language in $page.project.languages" :key="language">
-        {{ language }}
-      </li>
-    </ul>
-    <p v-html="$page.project.content">
-    </p>
+    <navigation></navigation>
+    <project
+      :title="$page.project.title"
+      :languages="$page.project.languages"
+    >
+      <div v-html="$page.project.content">
+    </div>
+    </project>
   </Layout>
 </template>
 
 <script>
+import Navigation from '../components/Navigation.vue';
+import Project from '../components/Project.vue';
+
 export default {
   metaInfo () {
     return {
@@ -23,7 +26,11 @@ export default {
         }
       ]
     }
-  }
+  },
+  components: {
+    Navigation,
+    Project,
+  },
 }
 </script>
 
@@ -37,10 +44,3 @@ query Project ($id: ID!) {
   }
 }
 </page-query>
-
-<style scoped lang="scss">
-p {
-  max-width: 65ch;
-  margin: 0 auto;
-}
-</style>

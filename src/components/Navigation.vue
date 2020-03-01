@@ -35,7 +35,6 @@
 <script>
 export default {
   data: () => ({
-    path: window.location.pathname,
     links: [
       {
         title: 'Projects',
@@ -54,18 +53,13 @@ export default {
       },
     ],
   }),
-  watch: {
-    $route: function(to, from) {
-      this.path = to.fullPath;
-    },
-  },
   methods: {
     insertActiveClass: function(link) {
       if(link.external) {
         return '';
       }
 
-      if(this.path === link.url) {
+      if(this.$route.fullPath === link.url) {
         return 'active';
       }
     },

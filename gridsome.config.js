@@ -8,6 +8,7 @@ module.exports = {
   siteName: 'Laytan Laats',
 
   templates: {
+    Repo: '/repos/:name',
     Project: '/projects/:title'
   },
 

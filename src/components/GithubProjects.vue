@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-for="(repos, language) in allByLanguage" :key="language">
-      <h2><i :class="`text-primary devicon-${iconName(language)}-plain colored`"></i> {{ language }}</h2>
+      <h2><dev-icon extra-classes="text-primary colored" :icon="language"></dev-icon> {{ language }}</h2>
       <div v-for="repo in repos" :key="repo.node.name">
         <h3>{{ niceName(repo.node.name) }}</h3>
         <g-image class="repo__image" v-for="img in getReadmeImages(repo.node)" :src="img" :key="img"></g-image>
@@ -27,7 +27,7 @@
 
 <static-query>
 query {
-	allRepos(filter: {
+	allRepo(filter: {
     fork: { eq: false },
     name: { ne: "hello-world" },
   },
@@ -42,7 +42,8 @@ query {
         html_url,
         created_at,
         updated_at,
-        repo_html
+        readme,
+        images,
       }
     }
   }
@@ -53,11 +54,16 @@ query {
 import { format } from 'date-fns';
 import { parse } from 'node-html-parser';
 
+import DevIcon from './DevIcon.vue';
+
 export default {
+  components: {
+    DevIcon,
+  },
   computed: {
     languages: function() {
       const languages = new Set();
-      this.$static.allRepos.edges.forEach(({ node }) => {
+      this.$static.allRepo.edges.forEach(({ node }) => {
         node.all_languages.forEach(language => {
           languages.add(language);
         });
@@ -73,26 +79,12 @@ export default {
 
       // Add repo to the arrays of the languages it contains
       [...this.languages].forEach(language => {
-        ret[language].push(...this.$static.allRepos.edges.filter(edge => edge.node.all_languages.includes(language)));
+        ret[language].push(...this.$static.allRepo.edges.filter(edge => edge.node.all_languages.includes(language)));
       });
       return ret;
     },
   },
   methods: {
-    iconName: function(language) {
-      switch(language) {
-        case 'Vue':
-          return 'vuejs';
-        case 'C++':
-          return 'cplusplus';
-        case 'C#':
-          return 'csharp';
-        case 'CSS':
-          return 'css3';
-        default:
-          return language.toLowerCase();
-      }
-    },
     // Parse repo html and extract image srces out of the markdown
     getReadmeImages: function(repo) {
       const root = parse(repo.repo_html);
