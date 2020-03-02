@@ -72,8 +72,16 @@ export default {
 
 .nav {
   &__brand {
+    display: none;
+    margin-right: 2rem;
+
     img {
-      max-height: 2.5rem;
+      width: auto;
+      height: 2.5rem;
+    }
+
+    @media(min-width: 550px) {
+      display: block;
     }
   }
   
@@ -89,6 +97,8 @@ ul {
   list-style-type: none;
   display: flex;
   justify-content: space-between;
+  padding-left: 0;
+  margin-left: 1rem;
 
   div {
     display: flex;
