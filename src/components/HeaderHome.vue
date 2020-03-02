@@ -124,6 +124,7 @@ nav {
     grid-row-end: 7;
     display: flex;
     justify-content: center;
+    align-items: center;
     z-index: 2;
   }
 }
