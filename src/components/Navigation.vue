@@ -37,13 +37,13 @@ export default {
   data: () => ({
     links: [
       {
-        title: 'Projects',
-        url: '/projects',
+        title: 'Home',
+        url: '/',
         external: false,
       },
       {
-        title: 'Contact',
-        url: '/contact',
+        title: 'Project',
+        url: '/projects/portfolio',
         external: false,
       },
       {
@@ -71,6 +71,8 @@ export default {
 @import '../styles/_variables';
 
 .nav {
+  border-bottom: 1px solid rgba($accent, .15);
+
   &__brand {
     display: none;
     margin-right: 2rem;

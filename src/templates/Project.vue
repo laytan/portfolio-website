@@ -4,16 +4,41 @@
     <project
       :title="$page.project.title"
       :languages="$page.project.languages"
+      :video="$page.project.video"
+      :timestamps="$page.project.timestamps"
+      :timestamp-descriptions="$page.project.timestampDescriptions"
+      :description="$page.project.description"
+      read-more="#content"
     >
-      <div v-html="$page.project.content">
-    </div>
     </project>
+    <div id="content" class="container">
+      <div class="carousel-wrapper">
+        <carousel
+          :per-page="1"
+          :autoplay="true"
+          :center-mode="true"
+          :pagination-padding="5"
+          :pagination-size="14"
+          pagination-color="#eeeeee"
+          pagination-active-color="#ffffff"
+        >
+          <slide v-for="(image, i) in $page.project.images" :key="`slide-${i}`">
+            <g-image :src="image"></g-image>
+          </slide>
+        </carousel>
+      </div>
+      <div v-html="$page.project.content" class="mt-0"></div>
+      <div class="pictures">
+        <g-image v-for="(image, i) in $page.project.images" :src="image" :key="i"></g-image>
+      </div>
+    </div>
   </Layout>
 </template>
 
 <script>
 import Navigation from '../components/Navigation.vue';
 import Project from '../components/Project.vue';
+import { Carousel, Slide } from 'vue-carousel';
 
 export default {
   metaInfo () {
@@ -30,6 +55,8 @@ export default {
   components: {
     Navigation,
     Project,
+    Carousel,
+    Slide,
   },
 }
 </script>
@@ -41,6 +68,46 @@ query Project ($id: ID!) {
     languages
     description
     content
+    timestamps
+    timestampDescriptions
+    video
+    images
   }
 }
 </page-query>
+
+<style lang="scss" scoped>
+#content {
+  .pictures {
+    margin-top: 1rem;
+    display: none;
+  }
+
+  img {
+    display: block;
+    margin: 0 0 0 auto;
+  }
+
+  @media(min-width: 800px) {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 50ch auto;
+
+    .pictures {
+      display: block;
+
+      img {
+        margin-bottom: 1rem;
+      }
+    }
+
+    .carousel-wrapper {
+      display: none;
+    }
+  }
+
+  @media(min-width: 1200px) {
+    grid-template-columns: 70ch auto;
+  }
+}
+</style>

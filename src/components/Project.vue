@@ -1,19 +1,22 @@
 <template>
   <div>
-    <h1>{{ title }}</h1>
-    <ul v-if="languages" class="languages">
-      <li v-for="language in languages" :key="language">
-        <dev-icon icon-type="plain-wordmark" :icon="language"></dev-icon>
-      </li>
-    </ul>
-    <p>
-      <slot></slot>
-    </p>
+    <div class="container">
+      <h1>{{ title }}</h1>
+      <timestamped-video :src="video" :timestamps="timestamps" :timestamp-descriptions="timestampDescriptions" :description="description">
+        <h2 class="mt-0">Description</h2>
+        <p>
+          {{ description }}
+        </p>
+        <button v-if="readMore" @click="scrollToReadMore" class="btn btn-primary">Read more</button>
+      </timestamped-video>
+    </div>
+    <dev-icon-bar :icons="languages"></dev-icon-bar>
   </div>
 </template>
 
 <script>
-import DevIcon from './DevIcon.vue';
+import TimestampedVideo from './TimestampedVideo.vue';
+import DevIconBar from './DevIconBar.vue';
 
 export default {
   props: {
@@ -25,31 +28,39 @@ export default {
       type: Array,
       required: false,
     },
+    video: {
+      type: String,
+      required: false,
+    },
+    timestamps: {
+      type: Array,
+      required: false,
+    },
+    timestampDescriptions: {
+      type: Array,
+      required: false,
+    },
+    description: {
+      type: String,
+    },
+    readMore: {
+      type: String,
+    },
   },
   components: {
-    DevIcon,
+    TimestampedVideo,
+    DevIconBar,
+  },
+  methods: {
+    scrollToReadMore: function() {
+      document.querySelector(this.readMore).scrollIntoView({ behavior: 'smooth' });
+    },
   },
 }
 </script>
 
 <style scoped lang="scss">
-@import '../styles/_variables.scss';
-
-p {
-  max-width: 65ch;
-  margin: 0 auto;
-}
-
-.languages {
-  display: flex;
-  justify-content: space-around;
-  list-style-type: none;
-  align-items: center;
-  background-color: $primary;
-  padding: 2rem 0;
-
-  li {
-    font-size: 5rem;
-  }
+.icons {
+  margin: 2rem 0;
 }
 </style>
