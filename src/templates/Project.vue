@@ -13,19 +13,21 @@
     </project>
     <div id="content" class="container">
       <div class="carousel-wrapper">
-        <carousel
-          :per-page="1"
-          :autoplay="true"
-          :center-mode="true"
-          :pagination-padding="5"
-          :pagination-size="14"
-          pagination-color="#eeeeee"
-          pagination-active-color="#ffffff"
-        >
-          <slide v-for="(image, i) in $page.project.images" :key="`slide-${i}`">
-            <g-image :src="image"></g-image>
-          </slide>
-        </carousel>
+        <ClientOnly>
+          <carousel
+            :per-page="1"
+            :autoplay="true"
+            :center-mode="true"
+            :pagination-padding="5"
+            :pagination-size="14"
+            pagination-color="#eeeeee"
+            pagination-active-color="#ffffff"
+          >
+            <slide v-for="(image, i) in $page.project.images" :key="`slide-${i}`">
+              <g-image :src="image"></g-image>
+            </slide>
+          </carousel>
+        </ClientOnly>
       </div>
       <div v-html="$page.project.content" class="mt-0"></div>
       <div class="pictures">
@@ -38,7 +40,6 @@
 <script>
 import Navigation from '../components/Navigation.vue';
 import Project from '../components/Project.vue';
-import { Carousel, Slide } from 'vue-carousel';
 
 export default {
   metaInfo () {
@@ -55,8 +56,14 @@ export default {
   components: {
     Navigation,
     Project,
-    Carousel,
-    Slide,
+    Carousel: () =>
+      import ('vue-carousel')
+      .then(m => m.Carousel)
+      .catch(),
+    Slide: () =>
+      import ('vue-carousel')
+      .then(m => m.Slide)
+      .catch(),
   },
 }
 </script>
