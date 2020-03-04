@@ -6,6 +6,7 @@
 
 module.exports = {
   siteName: 'Laytan Laats',
+  icon: './src/images/favicon.png',
 
   templates: {
     Repo: '/repos/:name',

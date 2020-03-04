@@ -11,7 +11,7 @@ import HeaderHome from '../components/HeaderHome';
 
 export default {
   metaInfo: {
-    title: 'Hello, world!'
+    title: 'Home'
   },
   components: {
     GithubProjects,
