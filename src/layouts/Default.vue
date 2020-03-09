@@ -1,6 +1,36 @@
 <template>
   <div class="layout">
-    <slot/>
+    <main>
+      <slot/>
+    </main>
+    <footer class="container bg-secondary">
+      <div class="contact-info">
+        <h2>Get in contact</h2>
+        <a href="mailto:laytanlaats@hotmail.com" rel="noopener noreferrer" target="_BLANK" class="contact-info__row">
+          <i>
+            <g-image src="~/images/envelope-solid.svg"></g-image>
+          </i>
+          <span>
+            LaytanLaats@hotmail.com
+          </span>
+        </a>
+        <a href="https://github.com/laytan" rel="noopener noreferrer" target="_BLANK" class="contact-info__row">
+          <i class="devicon-github-plain nav__icon"></i>
+          <span>
+            github.com/laytan
+          </span>
+        </a>
+        <a href="https://linkedin.com/in/laytan" rel="noopener noreferrer" target="_BLANK" class="contact-info__row">
+          <i>
+            <g-image src="~/images/linkedin-sign.svg" class="nav__icon"></g-image>
+          </i>
+          <span>
+            linkedin.com/in/laytan
+          </span>
+        </a>
+      </div>
+      Icons by <a href="https://fontawesome.com/license" rel="noopener noreferrer">Fontawesome</a> and <a href="https://konpa.github.io/devicon/" rel="noopener noreferrer">DevIcon</a>
+    </footer>
   </div>
 </template>
 
@@ -11,3 +41,35 @@ query {
   }
 }
 </static-query>
+
+<style lang="scss" scoped>
+@import '../styles/_variables.scss';
+footer {
+  margin-top: 5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: $primary;
+}
+
+.contact-info__row {
+  display: flex;
+  align-items: center;
+  margin-bottom: .5rem;
+
+  > i {
+    font-size: 2rem;
+    width: 2rem;
+    height: 2rem;
+
+    img {
+      height: 2rem;
+      width: 2rem;
+    }
+  }
+
+  > span {
+    padding-left: 1rem;
+  }
+}
+
+</style>

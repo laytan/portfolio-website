@@ -18,6 +18,11 @@
       </div>
       <div>
         <li>
+          <a href="mailto:laytanlaats@hotmail.com" rel="noopener noreferrer">
+            <g-image src="~/images/envelope-solid.svg" class="nav__icon"></g-image>
+          </a>
+        </li>
+        <li>
           <a href="https://github.com/laytan" rel="noopener noreferrer" target="_BLANK">
             <i class="devicon-github-plain nav__icon"></i>
           </a>
