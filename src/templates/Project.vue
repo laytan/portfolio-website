@@ -9,6 +9,7 @@
       :timestamp-descriptions="$page.project.timestampDescriptions"
       :description="$page.project.description"
       read-more="#content"
+      :github-link="$page.project.github"
     >
     </project>
     <div id="content" class="container">
@@ -79,6 +80,7 @@ query Project ($id: ID!) {
     timestampDescriptions
     video
     images
+    github
   }
 }
 </page-query>

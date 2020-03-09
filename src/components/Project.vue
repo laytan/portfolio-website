@@ -8,6 +8,7 @@
           {{ description }}
         </p>
         <button v-if="readMore" @click="scrollToReadMore" class="btn btn-primary">Read more</button>
+        <a v-if="githubLink" :href="githubLink" rel="noopener noreferrer" target="_BLANK" class="btn btn--accent ml-1">View code</a>
       </timestamped-video>
     </div>
     <dev-icon-bar :icons="languages"></dev-icon-bar>
@@ -44,6 +45,9 @@ export default {
       type: String,
     },
     readMore: {
+      type: String,
+    },
+    githubLink: {
       type: String,
     },
   },

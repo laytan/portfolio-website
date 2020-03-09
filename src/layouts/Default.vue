@@ -29,7 +29,15 @@
           </span>
         </a>
       </div>
-      Icons by <a href="https://fontawesome.com/license" rel="noopener noreferrer">Fontawesome</a> and <a href="https://konpa.github.io/devicon/" rel="noopener noreferrer">DevIcon</a>
+      <div class="copyright">
+        <p>
+          Icons by <a href="https://fontawesome.com/license" rel="noopener noreferrer">Fontawesome</a> 
+          and <a href="https://konpa.github.io/devicon/" rel="noopener noreferrer">DevIcon</a>
+        </p>
+        <p>
+          Copyright &copy; {{ new Date().getFullYear() }} Laytan Laats
+        </p>
+      </div>
     </footer>
   </div>
 </template>
@@ -47,7 +55,7 @@ query {
 footer {
   margin-top: 5rem;
   padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: 0.1rem;
   background-color: $primary;
 }
 
@@ -72,4 +80,13 @@ footer {
   }
 }
 
+.copyright {
+  text-align: center;
+  margin: .5rem 0;
+
+  p {
+    margin: 0;
+    margin-bottom: .5rem;
+  }
+}
 </style>
