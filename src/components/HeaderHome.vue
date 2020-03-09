@@ -18,9 +18,9 @@
     <div class="header__1">
       <div>
         <h2>Software Developer</h2>
-        <button class="btn">
-          View Projects
-        </button>
+        <a href="/projects/portfolio" class="btn text-center">
+          View <br> Projects
+        </a>
       </div>
     </div>
     <div class="header__2">
@@ -34,10 +34,10 @@
     </div>
     <div class="header__3">
       <div>
-        <h2>Do Things<br> Right</h2>
-        <button class="btn btn--accent">
-          About me
-        </button>
+        <h2>Likes the Work</h2>
+        <a href="/resume-laytan-laats.pdf" rel="noopener noreferrer" target="_BLANK" class="btn btn--accent text-center">
+          View <br> Resume
+        </a>
       </div>
     </div>
   </header>  

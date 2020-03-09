@@ -1,7 +1,6 @@
 <template>
   <Layout>
     <header-home></header-home>
-    <github-projects></github-projects>
   </Layout>
 </template>
 

@@ -53,7 +53,7 @@ query {
 <style lang="scss" scoped>
 @import '../styles/_variables.scss';
 footer {
-  margin-top: 5rem;
+  // margin-top: 5rem;
   padding-top: 1rem;
   padding-bottom: 0.1rem;
   background-color: $primary;
