@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container">
-      <h1>{{ title }}</h1>
+      <h1>{{ name }}</h1>
       <timestamped-video :src="video" :timestamps="timestamps" :timestamp-descriptions="timestampDescriptions" :description="description">
         <h2 class="mt-0">Description</h2>
         <p>
@@ -21,7 +21,7 @@ import DevIconBar from './DevIconBar.vue';
 
 export default {
   props: {
-    title: {
+    name: {
       type: String,
       required: true,
     },

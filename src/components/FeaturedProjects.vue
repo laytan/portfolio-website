@@ -1,23 +1,23 @@
 <template>
   <div>
-    <h2>Github Projects</h2>
-    <project-cards type="github" :cards="$static.allRepo.edges"></project-cards>
+    <h2>Featured Projects</h2>
+    <project-cards type="manual" :cards="$static.allProject.edges"></project-cards>
   </div>
 </template>
 
 <static-query>
 query {
-	allRepo(filter: {
-    fork: { eq: false },
-    name: { ne: "hello-world" },
-  },
-    sortBy: "created_at",
-    order: DESC,
+  allProject(
+    filter: {
+      published: { eq: true },
+    },
     limit: 4,
+    sortBy: "date",
+    order: DESC,
   ) {
     edges {
       node {
-        name,
+      	name,
         description,
         images,
       }

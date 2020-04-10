@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <navigation></navigation>
-    <repo-or-project :title="$page.project.title">
+    <repo-or-project :name="$page.project.name">
       <div class="media-and-description">
         <video class="media-and-description__media" ref="video" controls muted>
           <source :src="$page.project.video">
@@ -13,7 +13,7 @@
             {{ $page.project.description }}
           </div>
           <div>
-            <div>
+            <div class="block-spacing">
               <h2>Timestamps</h2>
               <timestamps
                 @timestampClick="timestampClick"
@@ -21,9 +21,9 @@
                 :timestamp-descriptions="$page.project.timestampDescriptions"
               ></timestamps>
             </div>
-            <div :style="{ margin: '1.5rem 0 .5rem 0' }">
+            <div class="buttons">
               <a class="btn" :href="$page.project.github">Bekijk Github</a>
-              <a v-if="$page.project.url" :href="$page.project.url" class="btn btn--secondary" :style="{ marginLeft: '1rem' }">Bekijk Project</a>
+              <a v-if="$page.project.url" :href="$page.project.url" class="btn btn--secondary">Bekijk Project</a>
             </div>
           </div>
         </div>
@@ -89,7 +89,7 @@ export default {
 <page-query>
 query Project ($id: ID!) {
   project: project (id: $id) {
-    title
+    name
     languages
     description
     content
@@ -104,6 +104,15 @@ query Project ($id: ID!) {
 </page-query>
 
 <style lang="scss" scoped>
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+
+  > a, > button {
+    margin-top: .5rem;
+  }
+}
+
 .content {
   .pictures {
     margin-top: 1rem;

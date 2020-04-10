@@ -10,7 +10,7 @@ module.exports = {
 
   templates: {
     Repo: '/repos/:name',
-    Project: '/projects/:title'
+    Project: '/projects/:name'
   },
 
   plugins: [

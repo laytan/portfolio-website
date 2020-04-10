@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <navigation></navigation>
-    <repo-or-project :title="niceName">
+    <repo-or-project :name="$page.repo.name">
       <div class="media-and-description">
         <div class="media-and-description__media">
           <ClientOnly v-if="$page.repo.images.length > 1">
@@ -27,7 +27,7 @@
             {{ $page.repo.description }}
           </div>
           <div>
-            <div>
+            <div class="block-spacing">
               <h2>Statistieken</h2>
               <div class="row">
                 <div class="row__item">Gemaakt op</div>
@@ -72,11 +72,6 @@ export default {
       import ('vue-carousel')
       .then(m => m.Slide)
       .catch(),
-  },
-  computed: {
-    niceName: function() {
-      return this.$page.repo.name.replace('-', ' ');
-    },
   },
 }
 </script>

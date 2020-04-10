@@ -1,5 +1,5 @@
 ---
-title: Portfolio
+name: Portfolio
 date: 2020-03-04
 published: true
 languages: ['Javascript', 'Vue', 'CSS', 'SASS']

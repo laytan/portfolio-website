@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="container">
-      <h1>{{ title }}</h1>
+      <h1>
+        <nice-name :name="name"></nice-name>
+      </h1>
       <div class="repo-or-project block-spacing">
         <slot></slot>
       </div>
@@ -10,9 +12,14 @@
 </template>
 
 <script>
+import NiceName from './NiceName';
+
 export default {
+  components: {
+    NiceName,
+  },
   props: {
-    title: {
+    name: {
       type: String,
       required: true,
     },
