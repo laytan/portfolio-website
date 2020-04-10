@@ -3,40 +3,42 @@
     <main>
       <slot/>
     </main>
-    <footer class="container bg-secondary">
-      <div class="contact-info">
-        <h2>Get in contact</h2>
-        <a href="mailto:laytanlaats@hotmail.com" rel="noopener noreferrer" target="_BLANK" class="contact-info__row">
-          <i>
-            <g-image src="~/images/envelope-solid.svg"></g-image>
-          </i>
-          <span>
-            LaytanLaats@hotmail.com
-          </span>
-        </a>
-        <a href="https://github.com/laytan" rel="noopener noreferrer" target="_BLANK" class="contact-info__row">
-          <i class="devicon-github-plain nav__icon"></i>
-          <span>
-            github.com/laytan
-          </span>
-        </a>
-        <a href="https://linkedin.com/in/laytan" rel="noopener noreferrer" target="_BLANK" class="contact-info__row">
-          <i>
-            <g-image src="~/images/linkedin-sign.svg" class="nav__icon"></g-image>
-          </i>
-          <span>
-            linkedin.com/in/laytan
-          </span>
-        </a>
-      </div>
-      <div class="copyright">
-        <p>
-          Icons by <a href="https://fontawesome.com/license" rel="noopener noreferrer">Fontawesome</a> 
-          and <a href="https://konpa.github.io/devicon/" rel="noopener noreferrer">DevIcon</a>
-        </p>
-        <p>
-          Copyright &copy; {{ new Date().getFullYear() }} Laytan Laats
-        </p>
+    <footer class="bg-secondary">
+      <div class="container">
+        <div class="contact-info">
+          <h2>Get in contact</h2>
+          <a href="mailto:laytanlaats@hotmail.com" rel="noopener noreferrer" target="_BLANK" class="contact-info__row">
+            <i>
+              <g-image src="~/images/envelope-solid.svg"></g-image>
+            </i>
+            <span>
+              LaytanLaats@hotmail.com
+            </span>
+          </a>
+          <a href="https://github.com/laytan" rel="noopener noreferrer" target="_BLANK" class="contact-info__row">
+            <i class="devicon-github-plain nav__icon"></i>
+            <span>
+              github.com/laytan
+            </span>
+          </a>
+          <a href="https://linkedin.com/in/laytan" rel="noopener noreferrer" target="_BLANK" class="contact-info__row">
+            <i>
+              <g-image src="~/images/linkedin-sign.svg" class="nav__icon"></g-image>
+            </i>
+            <span>
+              linkedin.com/in/laytan
+            </span>
+          </a>
+        </div>
+        <div class="copyright">
+          <p>
+            Icons by <a href="https://fontawesome.com/license" rel="noopener noreferrer">Fontawesome</a> 
+            and <a href="https://konpa.github.io/devicon/" rel="noopener noreferrer">DevIcon</a>
+          </p>
+          <p>
+            Copyright &copy; {{ new Date().getFullYear() }} Laytan Laats
+          </p>
+        </div>
       </div>
     </footer>
   </div>

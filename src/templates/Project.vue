@@ -1,18 +1,36 @@
 <template>
   <Layout>
     <navigation></navigation>
-    <project
-      :title="$page.project.title"
-      :languages="$page.project.languages"
-      :video="$page.project.video"
-      :timestamps="$page.project.timestamps"
-      :timestamp-descriptions="$page.project.timestampDescriptions"
-      :description="$page.project.description"
-      read-more="#content"
-      :github-link="$page.project.github"
-    >
-    </project>
-    <div id="content" class="container">
+    <repo-or-project :title="$page.project.title">
+      <div class="media-and-description">
+        <video class="media-and-description__media" ref="video" controls muted>
+          <source :src="$page.project.video">
+          Your browser does not support video players.
+        </video>
+        <div>
+          <div>
+            <h2>Description</h2>
+            {{ $page.project.description }}
+          </div>
+          <div>
+            <div>
+              <h2>Timestamps</h2>
+              <timestamps
+                @timestampClick="timestampClick"
+                :timestamps="$page.project.timestamps"
+                :timestamp-descriptions="$page.project.timestampDescriptions"
+              ></timestamps>
+            </div>
+            <div :style="{ margin: '1.5rem 0 .5rem 0' }">
+              <a class="btn" :href="$page.project.github">Bekijk Github</a>
+              <a v-if="$page.project.url" :href="$page.project.url" class="btn btn--secondary" :style="{ marginLeft: '1rem' }">Bekijk Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </repo-or-project>
+    <dev-icon-bar class="block-spacing" :icons="$page.project.languages"></dev-icon-bar>
+    <div class="container content">
       <div class="carousel-wrapper">
         <ClientOnly>
           <carousel
@@ -40,23 +58,16 @@
 
 <script>
 import Navigation from '../components/Navigation.vue';
-import Project from '../components/Project.vue';
+import RepoOrProject from '../components/RepoOrProject.vue';
+import DevIconBar from '../components/DevIconBar.vue';
+import Timestamps from '../components/Timestamps.vue';
 
 export default {
-  metaInfo () {
-    return {
-      title: this.$page.project.title,
-      meta: [
-        {
-          name: 'description',
-          content: this.$page.project.description
-        }
-      ]
-    }
-  },
   components: {
     Navigation,
-    Project,
+    RepoOrProject,
+    DevIconBar,
+    Timestamps,
     Carousel: () =>
       import ('vue-carousel')
       .then(m => m.Carousel)
@@ -65,6 +76,12 @@ export default {
       import ('vue-carousel')
       .then(m => m.Slide)
       .catch(),
+  },
+  methods: {
+    timestampClick: function(time) {
+      this.$refs.video.currentTime = time;
+      this.$refs.video.pause();
+    },
   },
 }
 </script>
@@ -81,12 +98,13 @@ query Project ($id: ID!) {
     video
     images
     github
+    url
   }
 }
 </page-query>
 
 <style lang="scss" scoped>
-#content {
+.content {
   .pictures {
     margin-top: 1rem;
     display: none;

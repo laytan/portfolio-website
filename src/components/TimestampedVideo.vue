@@ -70,9 +70,6 @@ export default {
   display: grid;
   grid-template-columns: 1fr;
   gap: 3%;
-  margin: 0 auto;
-  background-color: rgba(255,255,255,0.05);
-  padding: 1rem;
 
   video {
     width: 100%;

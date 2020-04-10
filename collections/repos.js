@@ -114,13 +114,12 @@ async function getImages(urls, folder) {
     try {
       // If this is succesfull the file exists
       await fsp.access(downloadLocation);
-      return fileName;
     } catch(_) {
       // If it errors the file does not exist so we download it
       console.log(`downloading: ${fileName}`);
       await download(url, downloadLocation);
-      return fileName;
     }
+    return fileName;
   }));
 }
 

@@ -5,6 +5,7 @@ published: true
 languages: ['Javascript', 'Vue', 'CSS', 'SASS']
 description: "My Portfolio / The site you are on right now. This is a Gridsome site which is a static site generator. It fetches all my Github projects and custom projects added via Markdown files."
 github: https://github.com/laytan/portfolio-website
+url: https://laytanlaats.com
 video: '/videos/portfolio-preview.m4v'
 timestamps: [3000, 13000]
 timestampDescriptions: ['De Call to Action van de home pagina', 'De oude versie van een project pagina(deze pagina)']
