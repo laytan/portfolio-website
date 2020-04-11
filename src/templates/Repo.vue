@@ -11,7 +11,7 @@
               :center-mode="true"
               :pagination-padding="5"
               :pagination-size="14"
-              pagination-color="#eeeeee"
+              pagination-color="#aaa"
               pagination-active-color="#ffffff"
               :loop="true"
             >
