@@ -104,15 +104,6 @@ query Project ($id: ID!) {
 </page-query>
 
 <style lang="scss" scoped>
-.buttons {
-  display: flex;
-  flex-wrap: wrap;
-
-  > a, > button {
-    margin-top: .5rem;
-  }
-}
-
 .content {
   .pictures {
     margin-top: 1rem;

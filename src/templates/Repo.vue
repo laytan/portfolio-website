@@ -13,6 +13,7 @@
               :pagination-size="14"
               pagination-color="#eeeeee"
               pagination-active-color="#ffffff"
+              :loop="true"
             >
               <slide v-for="(image, i) in $page.repo.images" :key="`slide-${i}`">
                 <dynamic-g-image :img="`github/${image}`"></dynamic-g-image>
@@ -38,15 +39,16 @@
                 <div class="row__item">{{ $page.repo.updated_at }}</div>
               </div>
             </div>
-            <div>
+            <div class="buttons">
               <a target="_BLANK" rel="noopener noreferrer" :href="$page.repo.html_url" class="btn">View Github</a>
+              <button class="btn btn--secondary" @click="toContent">Read README</button>
             </div>
           </div>
         </div>
       </div>
     </repo-or-project>
     <dev-icon-bar class="block-spacing" :icons="$page.repo.all_languages"></dev-icon-bar>
-    <div class="container">
+    <div ref="content" class="container content">
       <div v-html="$page.repo.readme"></div>
     </div>
   </Layout>
@@ -73,6 +75,11 @@ export default {
       .then(m => m.Slide)
       .catch(),
   },
+  methods: {
+    toContent: function() {
+      this.$refs.content.scrollIntoView({ behavior: 'smooth' });
+    },
+  },
 }
 </script>
 
@@ -90,3 +97,23 @@ query Repo ($id: ID!) {
   }
 }
 </page-query>
+
+<style lang="scss">
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+
+  > a, > button {
+    margin-top: .5rem;
+  }
+}
+
+.content {
+  max-width: 90ch;
+
+  img {
+    max-height: 90vh;
+    width: auto;
+  }
+}
+</style>
