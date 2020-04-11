@@ -146,14 +146,18 @@ function download(url, location) {
  * Checks for relative url and turns it into an absolute url
  * @param {Object} imgE Img element to get src from
  */
-function absoluteGithubSrc(imgEl) {
-  const src = imgEl.getAttribute('src');
-  // If the src is already an absolute url return the original src
-  if(src.includes('https://')) {
-    return src;
+function absoluteGithubSrc(url) {
+  // If the url is already an absolute url return the original url
+  if(url.substring(0, 4) === 'http') {
+    return url;
   }
+
+  if(url.substring(0, 1) === '#') {
+    return url;
+  }
+
   // Turn the relative url into a absolute github url
-  return `https://github.com${imgEl.getAttribute('src')}`;
+  return `https://github.com${url}`;
 }
 
 /**
@@ -169,8 +173,22 @@ async function parseGithubPage(url) {
     return { readme: '', images: [] };
   }
 
+  // Don't show .anchor elements that github adds
+  readme.querySelectorAll('.anchor').forEach(e => e.setAttribute('class', 'd-none'));
+
   // All image urls in the readme
-  const readmeImageURLs = readme.querySelectorAll('img').map(absoluteGithubSrc);
+  const readmeImageURLs = readme.querySelectorAll('img').map(e => absoluteGithubSrc(e.getAttribute('src')));
+
+  // Change relative urls to absolute
+  readme.querySelectorAll('img').forEach(e => {
+    const absolute = absoluteGithubSrc(e.getAttribute('src'));
+    e.setAttribute('src', absolute);
+  });
+
+  readme.querySelectorAll('a').forEach(e => {
+    const absolute = absoluteGithubSrc(e.getAttribute('href'));
+    e.setAttribute('href', absolute);
+  });
 
   // Download all the images and return their paths
   // * Downloading is done because we want to benefit from gridsome's g-image component *
