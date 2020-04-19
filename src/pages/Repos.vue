@@ -7,7 +7,9 @@
         These are all my public Github projects dynamically retrieved via the Github API.
       </p>
     </header>
-    <project-cards type="github" :cards="$static.allRepo.edges"></project-cards>
+    <div class="container">
+      <project-cards type="github" :cards="$static.allRepo.edges"></project-cards>
+    </div>
   </Layout>
 </template>
 

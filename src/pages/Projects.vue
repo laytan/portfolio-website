@@ -7,7 +7,9 @@
         These are some of my best projects that i have made which i am allowed to show off.<br>Contact me for info about other projects i have done.
       </p>
     </header>
-    <project-cards type="manual" :cards="$static.allProject.edges"></project-cards>
+    <div class="container">
+      <project-cards type="manual" :cards="$static.allProject.edges"></project-cards>
+    </div>
   </Layout>
 </template>
 
