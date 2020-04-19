@@ -1,0 +1,22 @@
+body {
+  font-family: 'Roboto', 'sans-serif';
+  color: #e2f3f5;
+  background: #03090c;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $header-font;
+}
+
+a {
+  color: #cdf8ff;
+  text-decoration: none;
+}
+
+i {
+  color: $accent;
+}
+
+img {
+  max-width: 100%;
+}

@@ -1,0 +1,20 @@
+.row {
+  display: table-row;
+
+  &__item {
+    display: table-cell;
+    padding: .3rem 1rem 0 0; 
+  }
+
+  &__item:nth-child(1) {
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__item:nth-child(2) {
+    padding-right: 0;
+  }
+}
