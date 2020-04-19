@@ -17,10 +17,9 @@
     <navigation></navigation>
     <div class="header__1">
       <div>
-        <!-- <h2>Software Developer</h2> -->
-        <a href="/projects/portfolio" class="btn btn--large text-center">
+        <g-link to="/projects" class="btn btn--large text-center">
           View Projects
-        </a>
+        </g-link>
       </div>
     </div>
     <div class="header__2">
@@ -34,7 +33,6 @@
     </div>
     <div class="header__3">
       <div>
-        <!-- <h2>Likes the Work</h2> -->
         <a href="/resume-laytan-laats.pdf" rel="noopener noreferrer" target="_BLANK" class="btn btn--accent btn--large text-center">
           View Resume
         </a>
