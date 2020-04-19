@@ -34,7 +34,7 @@ query {
     archived: { ne: true },
     private: { ne: true },
   },
-    sort: [ { by: "stargazers_count" }, { by: "created_at" } ],
+    sort: [ { by: "stargazers_count" }, { by: "updated_at" } ],
     order: DESC,
   ) {
     edges {
