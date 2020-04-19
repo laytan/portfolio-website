@@ -1,18 +1,5 @@
 <template>
 <div>
-  <alert 
-    :style="{
-      position: 'absolute',
-      left: 'calc(50%)',
-      transform: 'translateX(-50%)',
-      width: '75%',
-      maxWidth: '700px',
-      marginTop: '1rem',
-    }"
-    type="warning"
-  >
-    This site is a <strong>work in progress!</strong> Not everything works.
-  </alert>
   <header class="header">
     <navigation></navigation>
     <div class="header__1">
