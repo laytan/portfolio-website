@@ -11,6 +11,9 @@
 import Navigation from '../components/Navigation.vue';
 
 export default {
+  metaInfo: {
+    title: '404 Not Found',
+  },
   components: {
     Navigation,
   },

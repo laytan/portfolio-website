@@ -18,6 +18,9 @@ import Navigation from '../components/Navigation.vue';
 import ProjectCards from '../components/ProjectCards.vue';
 
 export default {
+  metaInfo: {
+    title: 'Projects',
+  },
   components: {
     Navigation,
     ProjectCards,
