@@ -46,13 +46,13 @@ export default {
         url: '/',
         external: false,
       },
+      // {
+      //   title: 'Projects',
+      //   url: '/projects',
+      //   external: false,
+      // },
       {
         title: 'Projects',
-        url: '/projects',
-        external: false,
-      },
-      {
-        title: 'Github Projects',
         url: '/repos',
         external: false,
       },

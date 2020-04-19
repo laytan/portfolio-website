@@ -4,7 +4,7 @@
     <navigation></navigation>
     <div class="header__1">
       <div>
-        <g-link to="/projects" class="btn btn--large text-center">
+        <g-link to="/repos" class="btn btn--large text-center">
           View Projects
         </g-link>
       </div>

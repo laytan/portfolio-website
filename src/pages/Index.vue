@@ -2,11 +2,11 @@
   <Layout>
     <header-home></header-home>
     <div class="container">
-      <div :style="{ marginBottom: '5rem' }"></div>
-      <featured-projects></featured-projects>
-      <div :style="{ textAlign: 'right' }">
-        <g-link class="btn btn--secondary" to="/projects">View All Projects</g-link>
-      </div>
+      <!-- <div :style="{ marginBottom: '5rem' }"></div> -->
+      <!-- <featured-projects></featured-projects> -->
+      <!-- <div :style="{ textAlign: 'right' }"> -->
+        <!-- <g-link class="btn btn--secondary" to="/projects">View All Projects</g-link> -->
+      <!-- </div> -->
       <div :style="{ marginBottom: '5rem' }"></div>
       <github-projects></github-projects>
       <div :style="{ textAlign: 'right' }">

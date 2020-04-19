@@ -4,7 +4,7 @@
 require('dotenv').config();
 const getRepos = require('./collections/repos');
 
-const EXCLUDED_REPOS = ['portfolio-website'];
+const EXCLUDED_REPOS = [];
 const GITHUB_USERNAME = 'laytan';
 
 module.exports = function (api) {
