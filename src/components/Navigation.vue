@@ -16,7 +16,7 @@
           </g-link>
         </li>
       </div>
-      <div>
+      <div class="right">
         <li>
           <a href="mailto:laytanlaats@hotmail.com" rel="noopener noreferrer">
             <g-image src="~/images/envelope-solid.svg" class="nav__icon"></g-image>
@@ -49,6 +49,11 @@ export default {
       {
         title: 'Projects',
         url: '/projects',
+        external: false,
+      },
+      {
+        title: 'Github Projects',
+        url: '/repos',
         external: false,
       },
       {
@@ -106,6 +111,7 @@ ul {
   justify-content: space-between;
   padding-left: 0;
   margin-left: 1rem;
+  flex-wrap: wrap;
 
   div {
     display: flex;
@@ -129,5 +135,13 @@ ul {
       }
     }
   }
-}  
+}
+
+.right {
+  margin-top: 1rem;
+
+  @media(min-width: 500px) {
+    margin-top: 0;
+  }
+}
 </style>
