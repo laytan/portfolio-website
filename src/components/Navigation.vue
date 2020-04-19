@@ -47,8 +47,8 @@ export default {
         external: false,
       },
       {
-        title: 'Project',
-        url: '/projects/portfolio',
+        title: 'Projects',
+        url: '/projects',
         external: false,
       },
       {
