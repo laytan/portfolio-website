@@ -85,7 +85,7 @@ footer {
 
 .copyright {
   text-align: center;
-  margin: .5rem 0;
+  margin-top: 2rem;
 
   p {
     margin: 0;
