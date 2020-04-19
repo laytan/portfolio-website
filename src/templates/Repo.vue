@@ -30,13 +30,13 @@
           <div>
             <div class="block-spacing">
               <h2>Statistieken</h2>
-              <div class="row">
-                <div class="row__item">Gemaakt op</div>
-                <div class="row__item">{{ $page.repo.created_at }}</div>
+              <div v-if="$page.repo.stargazers_count > 0" class="row">
+                <div class="row__item">Sterren</div>
+                <div class="row__item">{{ $page.repo.stargazers_count }}</div>
               </div>
               <div class="row">
                 <div class="row__item">Laatst actief op</div>
-                <div class="row__item">{{ $page.repo.updated_at }}</div>
+                <div class="row__item">{{ new Date($page.repo.updated_at).toDateString() }}</div>
               </div>
             </div>
             <div class="buttons">
@@ -94,6 +94,7 @@ query Repo ($id: ID!) {
     updated_at,
     readme,
     images,
+    stargazers_count,
   }
 }
 </page-query>
