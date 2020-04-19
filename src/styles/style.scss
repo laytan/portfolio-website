@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css?family=Archivo+Black|Roboto&display=swap');
 
 // Icon pack of populair development logos
-@import './devicon.css';
-@import './devicon-colors.css';
+@import './modules/devicon/devicon.css';
+@import './modules/devicon/devicon-colors.css';
 
 // Syntax higlight code blocks
-@import './prism-vsc-dark-plus.css';
+@import './modules/prism-vsc-dark-plus.css';
 
 @import './variables';
 @import './buttons';
