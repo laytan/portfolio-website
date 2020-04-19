@@ -1,9 +1,27 @@
 <template>
-  <div>
-    <h2>Github Projects</h2>
+  <Layout>
+    <navigation></navigation>
+    <header class="category-header">
+      <h1>Repos</h1>
+      <p>
+        These are all my public Github projects dynamically retrieved via the Github API.
+      </p>
+    </header>
     <project-cards type="github" :cards="$static.allRepo.edges"></project-cards>
-  </div>
+  </Layout>
 </template>
+
+<script>
+import Navigation from '../components/Navigation.vue';
+import ProjectCards from '../components/ProjectCards.vue';
+
+export default {
+  components: {
+    Navigation,
+    ProjectCards,
+  },
+}
+</script>
 
 <static-query>
 query {
@@ -16,7 +34,6 @@ query {
   },
     sort: [ { by: "stargazers_count" }, { by: "created_at" } ],
     order: DESC,
-    limit: 4,
   ) {
     edges {
       node {
@@ -29,13 +46,3 @@ query {
   }
 }
 </static-query>
-
-<script>
-import ProjectCards from './ProjectCards';
-
-export default {
-  components: {
-    ProjectCards,
-  },
-}
-</script>
