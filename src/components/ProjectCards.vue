@@ -44,7 +44,8 @@ export default {
       required: true,
       validator: function(value) {
         for(const { node: project } of value) {
-          if(!project.name || !project.description) {
+          if(!project.name || typeof project.description !== 'string') {
+            console.error('Validation failed:', project);
             return false;
           }
         }
