@@ -1,14 +1,9 @@
-# Default starter for Gridsome
+# Portfolio
 
-This is the project you get when you run `gridsome create new-project`.
+The repo for my portfolio on [laytanlaats.com](https://laytanlaats.com/)
 
-### 1. Install Gridsome CLI tool if you don't have
+This is a Gridsome project that allows for projects in markdown format and retrieves all my Github Repos as projects via the Github API also.
 
-`npm install --global @gridsome/cli`
+The retrieving of Github projects is made fully custom and also crawles the repo page for information that is not retrievable by the Github API.
 
-### 2. Create a Gridsome project
-
-1. `gridsome create my-gridsome-site` to install default starter
-2. `cd my-gridsome-site` to open the folder
-3. `gridsome develop` to start a local dev server at `http://localhost:8080`
-4. Happy coding 🎉🙌
+All the components are designed to work with manual projects and with github repos at the same time.
