@@ -32,7 +32,7 @@
         </div>
         <div class="copyright">
           <p>
-            background by <a href="https://www.svgbackgrounds.com/license/" rel="noopener noreferrer">SVGBackgrounds.com</a><br>
+            background on <g-link to="/projects">Projects page</g-link> and <g-link to="/repos">Repos page</g-link> by <a href="https://www.svgbackgrounds.com/license/" rel="noopener noreferrer">SVGBackgrounds.com</a><br>
             Icons by <a href="https://fontawesome.com/license" rel="noopener noreferrer">Fontawesome</a>
             and <a href="https://konpa.github.io/devicon/" rel="noopener noreferrer">DevIcon</a>
           </p>
