@@ -7,3 +7,4 @@ This is a Gridsome project that allows for projects in markdown format and retri
 The retrieving of Github projects is made fully custom and also crawles the repo page for information that is not retrievable by the Github API.
 
 All the components are designed to work with manual projects and with github repos at the same time.
+ 
