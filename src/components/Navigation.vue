@@ -4,7 +4,7 @@
       <div>
         <li class="nav__brand">
           <g-link to="/">
-            <g-image src="~/images/logo.svg"></g-image>
+            <img src="/images/logo.svg">
           </g-link>
         </li>
         <li v-for="link in links" :key="link.url" :class="insertActiveClass(link)">
@@ -19,7 +19,7 @@
       <div class="right">
         <li>
           <a href="mailto:laytanlaats@hotmail.com" rel="noopener noreferrer">
-            <g-image src="~/images/envelope-solid.svg" class="nav__icon"></g-image>
+            <img src="/images/envelope-solid.svg" class="nav__icon">
           </a>
         </li>
         <li>
@@ -29,7 +29,7 @@
         </li>
         <li>
           <a href="https://linkedin.com/in/laytan" rel="noopener noreferrer" target="_BLANK">
-            <g-image src="~/images/linkedin-sign.svg" class="nav__icon"></g-image>
+            <img src="/images/linkedin-sign.svg" class="nav__icon">
           </a>
         </li>
       </div>
