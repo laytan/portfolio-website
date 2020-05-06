@@ -7,7 +7,7 @@
       <!-- <div :style="{ textAlign: 'right' }"> -->
         <!-- <g-link class="btn btn--secondary" to="/projects">View All Projects</g-link> -->
       <!-- </div> -->
-      <div :style="{ marginBottom: '5rem' }"></div>
+      <div :style="{ marginBottom: '2.5rem' }"></div>
       <github-projects></github-projects>
       <div :style="{ textAlign: 'right' }">
         <g-link class="btn btn--secondary" to="/repos">View All Github Projects</g-link>

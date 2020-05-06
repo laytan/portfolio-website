@@ -4,14 +4,17 @@
     <navigation></navigation>
     <div class="header__1">
       <div>
-        <g-link to="/repos" class="btn btn--large text-center">
+        <p class="text-center lead">
+          My pet projects
+        </p>
+        <custom-button to="/repos" :outside="false">
           View Projects
-        </g-link>
+        </custom-button>
       </div>
     </div>
     <div class="header__2">
       <div class="header__logo">
-        <img src="/images/logo.svg">
+        <img onload="this.parentNode.classList.add('loaded');" src="/images/logo.svg">
         <h1>
           LAYTAN<br>
           LAATS
@@ -20,9 +23,12 @@
     </div>
     <div class="header__3">
       <div>
-        <a href="/resume-laytan-laats.pdf" rel="noopener noreferrer" target="_BLANK" class="btn btn--accent btn--large text-center">
+        <p class="lead">
+          Everything layed out for the lazy
+        </p>
+        <custom-button to="/resume-laytan-laats.pdf" button-type="accent">
           View Resume
-        </a>
+        </custom-button>
       </div>
     </div>
   </header>  
@@ -32,11 +38,13 @@
 <script>
 import Navigation from './Navigation.vue';
 import Alert from './Alert.vue';
+import CustomButton from './CustomButton.vue';
 
 export default {
   components: {
     Navigation,
     Alert,
+    CustomButton,
   },
 }
 </script>
@@ -52,7 +60,7 @@ nav {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: min-content repeat(8, 1fr);
-  height: 100vh;
+  height: 90vh;
 
   &__logo {
     display: flex;
@@ -61,19 +69,26 @@ nav {
     padding: 1rem;
     box-shadow: 5px 5px 4px rgba(0,0,0,0.15);
     font-size: 1rem;
-    animation: bounce .5s;
 
-    @keyframes bounce {
-      0% {
-        transform: scale(0);
-      }
+    &:not(.loaded) {
+      transform: scale(0);
+    }
 
-      90% {
-        transform: scale(1.2);
-      }
-
-      100% {
-        transform: none;
+    &.loaded {
+      animation: bounce .35s;
+  
+      @keyframes bounce {
+        0% {
+          transform: scale(0);
+        }
+  
+        90% {
+          transform: scale(1.2);
+        }
+  
+        100% {
+          transform: none;
+        }
       }
     }
 
@@ -144,6 +159,15 @@ nav {
     align-items: center;
     z-index: 2;
   }
+}
+
+.lead {
+  font-size: 120%;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 1px #000;
 }
 
 @media(min-width: 359px) {
