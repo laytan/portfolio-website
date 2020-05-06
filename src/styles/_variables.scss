@@ -5,3 +5,11 @@ $secondary: #4592af;
 $accent: #ff304f;
 $text-font: 'Roboto', 'sans-serif';
 $header-font: 'Archivo Black', 'Impact', 'sans-serif';
+
+:root {
+  --background: #{$background};
+  --text: #{$text};
+  --primary: #{$primary};
+  --secondary: #{$secondary};
+  --accent: #{$accent};
+}
