@@ -11,7 +11,7 @@
     </div>
     <div class="header__2">
       <div class="header__logo">
-        <g-image src="~/images/logo.svg"></g-image>
+        <img src="/images/logo.svg">
         <h1>
           LAYTAN<br>
           LAATS
@@ -61,6 +61,21 @@ nav {
     padding: 1rem;
     box-shadow: 5px 5px 4px rgba(0,0,0,0.15);
     font-size: 1rem;
+    animation: bounce .5s;
+
+    @keyframes bounce {
+      0% {
+        transform: scale(0);
+      }
+
+      90% {
+        transform: scale(1.2);
+      }
+
+      100% {
+        transform: none;
+      }
+    }
 
     h1 {
       margin: 0;
