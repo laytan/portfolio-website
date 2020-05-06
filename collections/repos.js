@@ -3,6 +3,7 @@ const fetch = require('node-fetch');
 const fs = require('fs');
 const fsp = fs.promises;
 const request = require('request');
+const crc32 = require('crc32');
 
 async function getRepos(username, accessToken, excludedRepos) {
   const authenticatedHeaders = githubHeaders(username, accessToken);
@@ -106,9 +107,10 @@ async function getReadme(url) {
 async function getImages(urls, folder) {
   return await Promise.all(urls.map(async (url) => {
     // Get file name out of url
-    // ! If there are 2 files with the same name over 2 repos this won't work
     const fileName = url.substring(url.lastIndexOf('/') + 1);
-    const downloadLocation = `./src/images/${folder}/${fileName}`;
+    // Add a hash for the url at the beginning so files can have the same name over different repos
+    const identifier = `${crc32(url)}-${fileName}`;
+    const downloadLocation = `./src/images/${folder}/${identifier}`;
     
     // If the file exists we have downloaded it before, no need to do it again
     try {
@@ -119,7 +121,7 @@ async function getImages(urls, folder) {
       console.log(`downloading: ${fileName}`);
       await download(url, downloadLocation);
     }
-    return fileName;
+    return identifier;
   }));
 }
 
