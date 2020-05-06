@@ -40,8 +40,8 @@
               </div>
             </div>
             <div class="buttons">
-              <a target="_BLANK" rel="noopener noreferrer" :href="$page.repo.html_url" class="btn">View Github</a>
-              <button class="btn btn--secondary" @click="toContent">Read README</button>
+              <custom-button :to="$page.repo.html_url" hover="text">View Github</custom-button>
+              <custom-button button-type="secondary" hover="text" @click="toContent">Read README</custom-button>
             </div>
           </div>
         </div>
@@ -59,6 +59,7 @@ import Navigation from '../components/Navigation.vue';
 import RepoOrProject from '../components/RepoOrProject.vue';
 import DevIconBar from '../components/DevIconBar.vue';
 import DynamicGImage from '../components/DynamicGImage.vue';
+import CustomButton from '../components/CustomButton.vue';
 
 export default {
   components: {
@@ -66,6 +67,7 @@ export default {
     RepoOrProject,
     DevIconBar,
     DynamicGImage,
+    CustomButton,
     Carousel: () =>
       import ('vue-carousel')
       .then(m => m.Carousel)

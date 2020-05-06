@@ -22,8 +22,8 @@
               ></timestamps>
             </div>
             <div class="buttons">
-              <a class="btn" :href="$page.project.github">Bekijk Github</a>
-              <a v-if="$page.project.url" :href="$page.project.url" class="btn btn--secondary">Bekijk Project</a>
+              <custom-button :to="$page.project.github" hover="text">Bekijk Github</custom-button>
+              <custom-button v-if="$page.project.url" :to="$page.project.url" button-type="secondary" hover="text">Bekijk Project</custom-button>
             </div>
           </div>
         </div>
@@ -61,6 +61,7 @@ import Navigation from '../components/Navigation.vue';
 import RepoOrProject from '../components/RepoOrProject.vue';
 import DevIconBar from '../components/DevIconBar.vue';
 import Timestamps from '../components/Timestamps.vue';
+import CustomButton from '../components/CustomButton.vue';
 
 export default {
   components: {
@@ -68,6 +69,7 @@ export default {
     RepoOrProject,
     DevIconBar,
     Timestamps,
+    CustomButton,
     Carousel: () =>
       import ('vue-carousel')
       .then(m => m.Carousel)
@@ -104,6 +106,11 @@ query Project ($id: ID!) {
 </page-query>
 
 <style lang="scss" scoped>
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .content {
   .pictures {
     margin-top: 1rem;

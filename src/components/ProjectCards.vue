@@ -16,7 +16,9 @@
           </h3>
           <p>{{ project.description }}</p>
         </div>
-        <g-link class="btn" :to="`/${urlPrefix}/${project.name.toLowerCase()}`">Learn more</g-link>
+        <custom-button :to="`/${urlPrefix}/${project.name.toLowerCase()}`" :outside="false" hover="text">
+          Learn More
+        </custom-button>
       </div>
     </div>
   </div>
@@ -25,11 +27,13 @@
 <script>
 import DynamicGImage from './DynamicGImage';
 import NiceName from './NiceName';
+import CustomButton from './CustomButton.vue';
 
 export default {
   components: {
     DynamicGImage,
     NiceName,
+    CustomButton,
   },
   props: {
     type: {

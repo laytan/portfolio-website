@@ -7,7 +7,7 @@
         <p class="text-center lead">
           My pet projects
         </p>
-        <custom-button to="/repos" :outside="false">
+        <custom-button to="/repos" :outside="false" size="lg">
           View Projects
         </custom-button>
       </div>
@@ -26,7 +26,7 @@
         <p class="lead">
           Everything layed out for the lazy
         </p>
-        <custom-button to="/resume-laytan-laats.pdf" button-type="accent">
+        <custom-button to="/resume-laytan-laats.pdf" button-type="accent" size="lg">
           View Resume
         </custom-button>
       </div>
