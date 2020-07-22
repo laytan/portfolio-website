@@ -4,7 +4,14 @@
 require('dotenv').config();
 const getRepos = require('./collections/repos');
 
-const EXCLUDED_REPOS = [];
+const EXCLUDED_REPOS = [
+  'python-fibonacci',
+  'python-reverse-string',
+  'python-odd-or-even',
+  'python-number-guesser',
+  'python-rock-paper-scissors',
+  'python-calculator'
+];
 const GITHUB_USERNAME = 'laytan';
 
 module.exports = function (api) {
