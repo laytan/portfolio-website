@@ -107,17 +107,20 @@ export default {
 
 ul {
   list-style-type: none;
+
+  padding-left: 0;
+  margin: 0 1rem;
+
   display: flex;
   justify-content: space-between;
-  padding-left: 0;
-  margin-left: 1rem;
   flex-wrap: wrap;
 
-  div {
+  > div {
     display: flex;
     align-items: center;
+    margin: 0.5rem;
 
-    li {
+    li:not(:nth-last-child(1)) {
       margin-right: 1rem;
 
       a {
@@ -134,14 +137,6 @@ ul {
         border-bottom: 1px solid $accent;
       }
     }
-  }
-}
-
-.right {
-  margin-top: 1rem;
-
-  @media(min-width: 500px) {
-    margin-top: 0;
   }
 }
 </style>
