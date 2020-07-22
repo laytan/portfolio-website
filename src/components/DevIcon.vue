@@ -63,7 +63,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+div {
+  display: grid;
+  place-items: center;
+}
+
 i {
   display: block;
+}
+
+span {
+  font-size: 2rem;
 }
 </style>
