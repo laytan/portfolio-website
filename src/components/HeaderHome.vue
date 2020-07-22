@@ -4,11 +4,11 @@
     <navigation></navigation>
     <div class="header__1">
       <div>
-        <p class="text-center lead">
-          My pet projects
+        <p class="lead">
+          My professional experience
         </p>
-        <custom-button to="/repos" :outside="false" size="lg">
-          View Projects
+        <custom-button to="/resume-laytan-laats.pdf" size="lg">
+          Resume
         </custom-button>
       </div>
     </div>
@@ -23,11 +23,11 @@
     </div>
     <div class="header__3">
       <div>
-        <p class="lead">
-          Everything layed out for the lazy
+        <p class="text-center lead">
+          Side projects & learning
         </p>
-        <custom-button to="/resume-laytan-laats.pdf" button-type="accent" size="lg">
-          View Resume
+        <custom-button to="/repos" :outside="false" button-type="accent" size="lg">
+          Projects
         </custom-button>
       </div>
     </div>
