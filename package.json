@@ -9,18 +9,18 @@
   "dependencies": {
     "@gridsome/remark-prismjs": "^0.3.0",
     "@gridsome/source-filesystem": "^0.6.2",
-    "@gridsome/transformer-remark": "^0.5.0",
+    "@gridsome/transformer-remark": "^0.6.1",
     "crc32": "^0.2.2",
     "dotenv": "^8.2.0",
-    "gridsome": "^0.7.14",
+    "gridsome": "^0.7.19",
     "request": "^2.88.2",
     "vue-carousel": "^0.18.0"
   },
   "devDependencies": {
     "node-fetch": "^2.6.0",
-    "node-html-parser": "^1.2.16",
-    "node-sass": "^4.13.1",
+    "node-html-parser": "^1.2.20",
+    "node-sass": "^4.14.1",
     "normalize.css": "^8.0.1",
-    "sass-loader": "^8.0.2"
+    "sass-loader": "^9.0.2"
   }
 }
