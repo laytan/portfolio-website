@@ -1,5 +1,5 @@
 <template>
-  <div @click="$emit('click')" :class="`${buttonType} hover-${hover} ${size}`">
+  <div @click="$emit('click')" :class="`${buttonType} ${size}`">
     <button class="button" v-if="to.length === 0">
       <slot></slot>
     </button>
@@ -27,10 +27,6 @@ export default {
       type: String,
       default: 'primary',
     },
-    hover: {
-      type: String,
-      default: 'background',
-    },
     size: {
       type: String,
       default: 'm',
@@ -57,39 +53,31 @@ export default {
 
   &:hover {
     box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.6);
+    background: var(--primary-dark);
   }
 }
 
 .m .button {
   padding: 10px 20px;
-
-  &:hover {
-    letter-spacing: 1.5px;
-  }
 }
 
 .lg .button {
   padding: 15px 20px;
-
-  &:hover {
-    letter-spacing: 2px;
-  }
 }
 
 .secondary .button {
   background: var(--secondary);
+
+  &:hover {
+    background: var(--secondary-dark);
+  }
 }
 
 .accent .button {
   background: var(--accent);
-}
 
-.hover-background .button:hover {
-  background: var(--background);
-}
-
-.hover-text .button:hover {
-  color: var(--background);
-  background: var(--text);
+  &:hover {
+    background: var(--accent-dark);
+  }
 }
 </style>

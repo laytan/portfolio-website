@@ -1,15 +1,28 @@
 $background: #03090c;
 $text: #e2f3f5;
+
 $primary: #375fc0;
+$primary-dark: #2e53a8;
+
 $secondary: #4592af;
+$secondary-dark: #3b7a91;
+
 $accent: #ff304f;
+$accent-dark: #db2944;
+
 $text-font: 'Roboto', 'sans-serif';
 $header-font: 'Archivo Black', 'Impact', 'sans-serif';
 
 :root {
   --background: #{$background};
   --text: #{$text};
+
   --primary: #{$primary};
+  --primary-dark: #{$primary-dark};
+
   --secondary: #{$secondary};
+  --secondary-dark: #{$secondary-dark};
+
   --accent: #{$accent};
+  --accent-dark: #{$accent-dark};
 }

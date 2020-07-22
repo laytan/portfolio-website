@@ -22,8 +22,8 @@
               ></timestamps>
             </div>
             <div class="buttons">
-              <custom-button :to="$page.project.github" hover="text">Bekijk Github</custom-button>
-              <custom-button v-if="$page.project.url" :to="$page.project.url" button-type="secondary" hover="text">Bekijk Project</custom-button>
+              <custom-button :to="$page.project.github">Bekijk Github</custom-button>
+              <custom-button v-if="$page.project.url" :to="$page.project.url" button-type="secondary">Bekijk Project</custom-button>
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@
       <div :style="{ marginBottom: '2.5rem' }"></div>
       <github-projects></github-projects>
       <div :style="{ textAlign: 'right' }">
-        <custom-button button-type="secondary" :outside="false" to="/repos" hover="text">View All Github Projects</custom-button>
+        <custom-button button-type="secondary" :outside="false" to="/repos">View All Github Projects</custom-button>
       </div>
       <div :style="{ marginBottom: '5rem' }"></div>
     </div>

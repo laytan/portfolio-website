@@ -16,7 +16,7 @@
           </h3>
           <p>{{ project.description }}</p>
         </div>
-        <custom-button :to="`/${urlPrefix}/${project.name.toLowerCase()}`" :outside="false" hover="text">
+        <custom-button :to="`/${urlPrefix}/${project.name.toLowerCase()}`" :outside="false">
           Learn More
         </custom-button>
       </div>

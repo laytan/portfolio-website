@@ -40,8 +40,8 @@
               </div>
             </div>
             <div class="buttons">
-              <custom-button :to="$page.repo.html_url" hover="text">View Github</custom-button>
-              <custom-button button-type="secondary" hover="text" @click="toContent">Read README</custom-button>
+              <custom-button :to="$page.repo.html_url">View Github</custom-button>
+              <custom-button button-type="secondary" @click="toContent">Read README</custom-button>
             </div>
           </div>
         </div>
