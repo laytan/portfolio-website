@@ -20,6 +20,7 @@ query {
       	name,
         description,
         images,
+        path
       }
     }
   }

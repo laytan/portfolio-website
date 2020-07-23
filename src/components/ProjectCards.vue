@@ -16,7 +16,7 @@
           </h3>
           <p>{{ project.description }}</p>
         </div>
-        <custom-button :to="`/${urlPrefix}/${project.name.toLowerCase()}`" :outside="false">
+        <custom-button :to="project.path" :outside="false">
           Learn More
         </custom-button>
       </div>
@@ -56,11 +56,6 @@ export default {
         return true;
       },
     },
-  },
-  computed: {
-    urlPrefix: function() {
-      return this.type === 'manual' ? 'projects' : 'repos';
-    }
   },
 }
 </script>

@@ -23,7 +23,8 @@ query {
         name,
         description,
         images,
-        stargazers_count
+        stargazers_count,
+        path
       }
     }
   }
