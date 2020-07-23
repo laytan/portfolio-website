@@ -22,11 +22,12 @@ async function getRepos(username, accessToken, excludedRepos) {
       return null;
     }
   
-    // Get full readme html and image paths
-    const { readme, images } = await parseGithubPage(repo.html_url);
-  
-    // Fetch languages of the repo from github api and parse them into an array of language strings
-    const all_languages = await getLanguages(repo.languages_url, authenticatedHeaders);
+    const [{ readme, images }, all_languages] = await Promise.all([
+      // Get full readme html and image paths
+      parseGithubPage(repo.html_url),
+      // Fetch languages of the repo from github api and parse them into an array of language strings
+      getLanguages(repo.languages_url, authenticatedHeaders)
+    ]);
   
     // Add a node with the repo data from the github api + our custom properties
     return {
