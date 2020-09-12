@@ -17,7 +17,7 @@
     "vue-carousel": "^0.18.0"
   },
   "devDependencies": {
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "node-html-parser": "^1.2.20",
     "node-sass": "^4.14.1",
     "normalize.css": "^8.0.1",
