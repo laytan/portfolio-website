@@ -1,3 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .btn {
+        @apply px-3 py-1 tracking-wide rounded-sm font-display;
+    }
+
+    .btn:focus {
+        @apply outline-none;
+    }
+
+    .btn-blue {
+        @apply bg-blue;
+    }
+
+    .btn-blue:hover, .btn-blue:focus {
+        @apply bg-blue-dark;
+    }
+
+    .btn-pink {
+        @apply bg-pink;
+    }
+
+    .btn-pink:hover, .btn-pink:focus {
+        @apply bg-pink-dark;
+    }
+}
