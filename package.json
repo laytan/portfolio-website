@@ -5,13 +5,17 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html -d dev --target browser --open",
-    "build": "parcel build src/index.html -d dist --target browser"
+    "build": "rm -rf dist && parcel build src/index.html -d dist --target browser --no-source-maps"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/polyfill": "^7.12.1",
     "parcel-bundler": "^1.12.4",
+    "parcel-plugin-static-files-copy": "^2.5.0",
+    "parcel-plugin-svelte": "^4.0.6",
     "postcss-modules": "^3.2.2",
+    "svelte": "^3.29.0",
     "tailwindcss": "^1.9.4"
   }
 }
