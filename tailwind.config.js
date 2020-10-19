@@ -19,6 +19,10 @@ module.exports = {
                 default: '#ff304f',
                 dark: '#db2944',
             },
+            tech: {
+                golang: '#007d9c',
+                vuejs: '#42b983',
+            },
         },
         extend: {
             spacing: {
