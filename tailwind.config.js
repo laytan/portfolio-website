@@ -22,6 +22,9 @@ module.exports = {
             tech: {
                 golang: '#007d9c',
                 vuejs: '#42b983',
+                svelte: '#ff3e00',
+                tailwind: '#38b2ac',
+                csharp: '#662079',
             },
         },
         extend: {

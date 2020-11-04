@@ -2,8 +2,8 @@
     import Logo from "./components/Logo.svelte";
     import EnbiggenBox from "./components/EnbiggenBox.svelte";
     import CopyEmail from "./components/CopyEmail.svelte";
+    import Project from "./components/Project.svelte";
     import Badge from "./components/Badge.svelte";
-    import Carousel from "@beyonk/svelte-carousel/src/Carousel.svelte";
     import { onMount } from "svelte";
 
     let loadedClass = "";
@@ -101,7 +101,7 @@
         <EnbiggenBox
             className={`${loadedClass} bg-blue origin-bottom md:origin-right`} />
         <div class="absolute inset-0 flex items-end justify-center">
-            <div on:click={scrollTo('content')}>
+            <button on:click={scrollTo('content')}>
                 <img
                     class="hidden md:block animate-bounce"
                     src="chevron-multicolor.png"
@@ -119,87 +119,88 @@
                             fill="currentColor"
                             d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" /></svg>
                 </div>
-            </div>
+            </button>
         </div>
     </div>
     <div id="content" class="container px-3 mx-auto">
         <div class="py-6">
-            <h2 id="projects" class="pb-2 text-3xl font-display">Projects</h2>
-            <div class="flex flex-col gap-6 md:gap-4 md:flex-row">
-                <div class="order-2 md:w-2/3 md:order-1">
-                    <Carousel perPage={1} autoplay={5000}>
-                        <span
-                            class="block w-4 h-4 text-black control"
-                            slot="left-control">
-                            <svg
-                                aria-hidden="true"
-                                focusable="false"
-                                data-prefix="fas"
-                                data-icon="chevron-left"
-                                class="svg-inline--fa fa-chevron-left fa-w-10"
-                                role="img"
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 320 512"><path
-                                    fill="currentColor"
-                                    d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z" /></svg>
-                        </span>
-                        <span
-                            class="block w-4 h-4 text-black control"
-                            slot="right-control">
-                            <svg
-                                aria-hidden="true"
-                                focusable="false"
-                                data-prefix="fas"
-                                data-icon="chevron-right"
-                                class="svg-inline--fa fa-chevron-right fa-w-10"
-                                role="img"
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 320 512"><path
-                                    fill="currentColor"
-                                    d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" /></svg>
-                        </span>
-
-                        <div class="slide-content">
-                            <img
-                                src="shortnr/shortnr-dashboard.png"
-                                alt="Shortnr dashboard with all links, a new link form and statistics" />
-                        </div>
-                        <div class="slide-content">
-                            <img
-                                src="shortnr/shortnr-home.png"
-                                alt="Shortnr homepage with an introduction" />
-                        </div>
-                        <div class="slide-content">
-                            <img
-                                src="shortnr/shortnr-login.png"
-                                alt="Shortnr login page" />
-                        </div>
-                    </Carousel>
+            <h2 id="projects" class="text-3xl font-display">Projects</h2>
+            <Project title="Shortnr" code="https://github.com/laytan/shortnr" deployed="https://shortnr.laytanlaats.com" left={false}>
+                <div class="slide-content" slot="slide-content">
+                    <img
+                    src="shortnr/shortnr-dashboard.png"
+                    alt="Shortnr dashboard with all links, a new link form and statistics" />
                 </div>
-                <div class="order-1 md:w-1/3 md:order-2">
-                    <div class="flex items-center">
-                        <h3 class="mr-2 text-2xl font-display">Shortnr</h3>
-                        <Badge className="bg-tech-vuejs">VueJS</Badge>
-                        <Badge className="bg-tech-golang">Golang</Badge>
-                    </div>
+                <div class="slide-content" slot="slide-content">
+                    <img
+                    src="shortnr/shortnr-home.png"
+                    alt="Shortnr homepage with an introduction" />
+                </div>
+                <div class="slide-content" slot="slide-content">
+                    <img
+                        src="shortnr/shortnr-login.png"
+                        alt="Shortnr login page" />
+                </div>
+                <span slot="badges">
+                    <Badge className="bg-tech-vuejs">Vue</Badge>
+                </span>
+                <span slot="badges">
+                    <Badge className="bg-tech-golang">Golang</Badge>
+                </span>
+                <p slot="description">
+                    URL shortener in VueJS on the front-end and Go on the back-end.
+                </p>
+            </Project>
+            <Project title="Portfolio" code="https://github.com/laytan/personal-site" deployed="https://laytanlaats.com" left={true}>
+                <div class="slide-content" slot="slide-content">
+                    <img
+                    src="personal-site/personal-site-top.png"
+                    alt="The starting view of my personal website" />
+                </div>
+                <div class="slide-content" slot="slide-content">
+                    <img
+                    src="personal-site/personal-site-projects.png"
+                    alt="A view after scrolling a little with projects header and one project: shortnr" />
+                </div>
+                <span slot="badges">
+                    <Badge className="bg-tech-svelte">Svelte</Badge>
+                </span>
+                <span slot="badges">
+                    <Badge className="bg-tech-tailwind">Tailwind</Badge>
+                </span>
+                <p slot="description">
+                    Inception! My portfolio site aka the site you are looking at right now.
+                </p>
+            </Project>
+            <Project title="Get of that damn island" code="https://github.com/laytan/Get-of-that-damn-island-LD-42" deployed="https://laytanl.itch.io/get-of-that-damn-island" left={false}>
+                <div class="slide-content" slot="slide-content">
+                    <img
+                    src="get-of-that-damn-island/title-screen.png"
+                    alt="The title screen" />
+                </div>
+                <div class="slide-content" slot="slide-content">
+                    <img
+                    src="get-of-that-damn-island/tutorial.png"
+                    alt="The first tutorial level with the text: The island is unstable! Get out by pushing the spaceship to the airstrip." />
+                </div>
+                <span slot="badges">
+                    <Badge className="bg-gray-800">Unity</Badge>
+                </span>
+                <span slot="badges">
+                    <Badge className="bg-tech-csharp">C#</Badge>
+                </span>
+                <div slot="description">
                     <p class="pb-3">
-                        URL shortener in VueJS on the front-end and Go on the
-                        back-end.
+                        My submission to the Ludum Dare 42 Game Jam:
                     </p>
-                    <div class="flex flex-wrap gap-2">
-                        <a
-                            href="https://github.com/laytan/shortnr"
-                            target="_BLANK"
-                            rel="noopener noreferrer"
-                            class="btn btn-blue">View code</a>
-                        <a
-                            href="https://shortnr.laytanlaats.com"
-                            target="_BLANK"
-                            rel="noopener noreferrer"
-                            class="btn btn-pink">View deployed app</a>
-                    </div>
+                    <p class="pb-3 italic">
+                        A puzzle game where you need to get your ship to the landing strip before the whole world is gone.
+                    </p>
+                    <p>
+                        This is achieved by pushing around blocks and using the world being destroyed to your advantage.
+                    </p>
                 </div>
-            </div>
+            </Project>
         </div>
         <div class="py-6">
             <h2 id="email-me" class="text-3xl font-display">E-Mail</h2>
