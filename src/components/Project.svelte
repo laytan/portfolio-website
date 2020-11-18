@@ -5,15 +5,15 @@
     export let code;
     export let deployed;
     export let className;
-
+    export let controlColorClass = 'text-black';
     export let left = true;
 </script>
 
 <div class={`py-8 flex flex-col gap-6 md:gap-4 md:flex-row ${className}`}>
-    <div class="order-2 md:w-2/3" class:md:order-1={left == false}>
+    <div class={`order-2 md:w-2/3 ${left == false ? 'md:order-1' : ''}`}>
         <Carousel perPage={1} autoplay={5000}>
             <span
-                class="block w-4 h-4 text-black control"
+                class={`block w-4 h-4 control ${controlColorClass}`}
                 slot="left-control">
                 <svg
                     aria-hidden="true"
@@ -28,7 +28,7 @@
                         d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z" /></svg>
             </span>
             <span
-                class="block w-4 h-4 text-black control"
+                class={`block w-4 h-4 control ${controlColorClass}`}
                 slot="right-control">
                 <svg
                     aria-hidden="true"
@@ -45,7 +45,7 @@
             <slot name="slide-content"></slot>
         </Carousel>
     </div>
-    <div class="order-1 md:w-1/3" class:md-order-2={left == false}>
+    <div class={`order-1 md:w-1/3 ${left == false ? 'md-order-2' : ''}`}>
         <div class="flex items-center">
             <h3 class="mr-2 text-2xl font-display">{title}</h3>
             <slot name="badges"></slot>
@@ -59,11 +59,13 @@
                 target="_BLANK"
                 rel="noopener noreferrer"
                 class="btn btn-blue">View code</a>
+            {#if deployed?.length}    
             <a
                 href="{deployed}"
                 target="_BLANK"
                 rel="noopener noreferrer"
                 class="btn btn-pink">View deployed app</a>
+            {/if}
         </div>
     </div>
 </div>

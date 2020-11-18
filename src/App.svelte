@@ -125,6 +125,11 @@
     <div id="content" class="container px-3 mx-auto">
         <div class="py-6">
             <h2 id="projects" class="text-3xl font-display">Projects</h2>
+            <p>
+                Here is an overview of a selection of personal projects I have done, see my
+                <a class="text-blue" target="_BLANK" rel="noopener noreferrer" href="https://github.com/laytan">GitHub</a> for more.<br>
+                <button class="text-blue" on:click={scrollTo('email-me')}>Contact me</button> for info about my proffesional experience.
+            </p>
             <Project title="Shortnr" code="https://github.com/laytan/shortnr" deployed="https://shortnr.laytanlaats.com" left={false}>
                 <div class="slide-content" slot="slide-content">
                     <img
@@ -142,16 +147,83 @@
                         alt="Shortnr login page" />
                 </div>
                 <span slot="badges">
-                    <Badge className="bg-tech-vuejs">Vue</Badge>
+                    <Badge className="bg-tech-vuejs">VueJS</Badge>
                 </span>
                 <span slot="badges">
                     <Badge className="bg-tech-golang">Golang</Badge>
                 </span>
-                <p slot="description">
-                    URL shortener in VueJS on the front-end and Go on the back-end.
-                </p>
+                <span slot="badges">
+                    <Badge className="bg-tech-sql">MySQL</Badge>
+                </span>
+                <div slot="description">
+                    <p class="pb-3">
+                        URL shortener in VueJS on the front-end and Go on the back-end.
+                    </p>
+                    <p class="pb-3">
+                        Writing this i learned a lot about implementing token based authentication and golang in general.
+                    </p>
+                    <p>
+                        Try it out below!
+                    </p>
+                </div>
             </Project>
-            <Project title="Portfolio" code="https://github.com/laytan/personal-site" deployed="https://laytanlaats.com" left={true}>
+            <Project
+            title="Todo Collab"
+            code="https://github.com/laytan/todo-collab"
+            left={true}>
+                <div class="slide-content" slot="slide-content">
+                    <img
+                    src="todo-collab/home.png"
+                    alt="Home page" />
+                </div>
+                <div class="slide-content" slot="slide-content">
+                    <img
+                    src="todo-collab/login.png"
+                    alt="Login page" />
+                </div>
+                <div class="slide-content" slot="slide-content">
+                    <img
+                    src="todo-collab/register.png"
+                    alt="Register page" />
+                </div>
+                <div class="slide-content" slot="slide-content">
+                    <img
+                    src="todo-collab/empty-list.png"
+                    alt="An empty list" />
+                </div>
+                <span slot="badges">
+                    <Badge className="bg-tech-vuejs">Vue</Badge>
+                </span>
+                <span slot="badges">
+                    <Badge className="bg-tech-nodejs">Node</Badge>
+                </span>
+                <span slot="badges">
+                    <Badge className="bg-tech-feathers">Feathers</Badge>
+                </span>
+                <span slot="badges">
+                    <Badge className="bg-tech-sql">MySQL</Badge>
+                </span>
+                <div slot="description">
+                    <p class="pb-3">
+                        Fully realtime multi-user todo app. 
+                        Create a todo list and give access to other users. All changes are made realtime.
+                    </p>
+                    <p class="pb-3">
+                        This project also has full API documentation available on
+                        <a class="text-blue" target="_BLANK" rel="noopener noreferrer" href="https://github.com/laytan/todo-collab/tree/master/server">the GitHub page</a>
+                        and url.com/docs if the project was deployed.
+
+                        Only the Front-End Vue app is not finished and therefore it is not deployed.<br>
+                        I do plan on finishing it someday.
+                    </p>
+                </div>
+            </Project>
+            <Project
+            title="Portfolio"
+            code="https://github.com/laytan/personal-site"
+            deployed="https://laytanlaats.com"
+            left={false}
+            controlColorClass="text-white">
                 <div class="slide-content" slot="slide-content">
                     <img
                     src="personal-site/personal-site-top.png"
@@ -168,11 +240,21 @@
                 <span slot="badges">
                     <Badge className="bg-tech-tailwind">Tailwind</Badge>
                 </span>
-                <p slot="description">
-                    Inception! My portfolio site aka the site you are looking at right now.
-                </p>
+                <div slot="description">
+                    <p class="pb-3">
+                        Inception! My portfolio site aka the site you are looking at right now.
+                    </p>
+                    <p>
+                        The project introduced me to Svelte which was very similair to VueJS but more lightweight so it was perfect for this small site.
+                    </p>
+                </div>
             </Project>
-            <Project title="Get of that damn island" code="https://github.com/laytan/Get-of-that-damn-island-LD-42" deployed="https://laytanl.itch.io/get-of-that-damn-island" left={false}>
+            <Project
+            title="Get of that damn island"
+            code="https://github.com/laytan/Get-of-that-damn-island-LD-42"
+            deployed="https://laytanl.itch.io/get-of-that-damn-island"
+            left={true}
+            controlColorClass="text-white">
                 <div class="slide-content" slot="slide-content">
                     <img
                     src="get-of-that-damn-island/title-screen.png"
@@ -201,6 +283,45 @@
                     </p>
                 </div>
             </Project>
+            <Project
+            title="Crammed Defense"
+            code="https://github.com/laytan/Crammed-defense-GMTKJam2018"
+            deployed="https://laytanl.itch.io/crammed-defense"
+            left={false}>
+                <div class="slide-content" slot="slide-content">
+                    <img
+                    src="crammed-defense/tall.png"
+                    alt="Tower of snipers, machinge guns and heal blocks" />
+                </div>
+                <div class="slide-content" slot="slide-content">
+                    <img
+                    src="crammed-defense/falling.png"
+                    alt="Tower falling over because of inbalance" />
+                </div>
+                <div class="slide-content" slot="slide-content">
+                    <img
+                    src="crammed-defense/taller.png"
+                    alt="Very tall tower of snipers" />
+                </div>
+                <span slot="badges">
+                    <Badge className="bg-gray-800">Unity</Badge>
+                </span>
+                <span slot="badges">
+                    <Badge className="bg-tech-csharp">C#</Badge>
+                </span>
+                <div slot="description">
+                    <p class="pb-3">
+                        My submission to the Game Makers Toolkit Jam 2018:
+                    </p>
+                    <p class="pb-3 italic">
+                        A Tower Defence game restricted to a single 1 wide tile where all your towers stack on top of.
+                    </p>
+                </div>
+            </Project>
+            <h3 class="text-2xl font-display">More!</h3>
+            <p>
+                View my less complete and other projects on <a class="text-blue" target="_BLANK" rel="noreferrer noopener" href="https://github.com/laytan">GitHub.</a>
+            </p>
         </div>
         <div class="py-6">
             <h2 id="email-me" class="text-3xl font-display">E-Mail</h2>

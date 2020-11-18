@@ -25,6 +25,9 @@ module.exports = {
                 svelte: '#ff3e00',
                 tailwind: '#38b2ac',
                 csharp: '#662079',
+                nodejs: '#026e00',
+                feathers: '#D513A5',
+                sql: '#e97b00',
             },
         },
         extend: {
