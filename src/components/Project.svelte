@@ -4,7 +4,7 @@
     export let title;
     export let code;
     export let deployed;
-    export let className;
+    export let className = '';
     export let controlColorClass = 'text-black';
     export let left = true;
 </script>
