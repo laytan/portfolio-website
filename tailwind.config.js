@@ -28,6 +28,7 @@ module.exports = {
                 nodejs: '#026e00',
                 feathers: '#D513A5',
                 sql: '#e97b00',
+                docker: '#003f8c',
             },
         },
         extend: {
