@@ -134,6 +134,40 @@
                 <a class="text-blue" target="_BLANK" rel="noopener noreferrer" href="https://github.com/laytan">GitHub</a> for more.<br>
                 <button class="text-blue" on:click={scrollTo('email-me')}>Contact me</button> for info about my proffesional experience.
             </p>
+            <Project title="Featured Channels Feed" code="https://github.com/laytan/featured-channels-feed" deployed="https://featured-channels-feed.laytanlaats.com">
+                <div class="slide-content" slot="slide-content">
+                    <img
+                    src="featured-channels-feed/screen1.png"
+                    alt="Featured Channels Feed homepage" />
+                </div>
+                <div class="slide-content" slot="slide-content">
+                    <img
+                    src="featured-channels-feed/screen2.png"
+                    alt="Featured Channels Feed Results for Linus Tech Tips channel" />
+                </div>
+                <div class="slide-content" slot="slide-content">
+                    <img
+                        src="featured-channels-feed/screen3.png"
+                        alt="Featured Channels Feed loading modal" />
+                </div>
+                <span slot="badges">
+                    <Badge className="bg-tech-vuejs">VueJS</Badge>
+                </span>
+                <span slot="badges">
+                    <Badge className="bg-tech-golang">Golang</Badge>
+                </span>
+                <span slot="badges">
+                    <Badge className="bg-tech-docker">Docker</Badge>
+                </span>
+                <div slot="description">
+                    <p class="pb-3">
+                        Featured Channels Feed aggregates the latest videos of the featured channels of a channel.
+                    </p>
+                    <p class="pb-3">
+                        I wrote this because I found nothing like this on the web. I learned about Docker, Vite and web scraping with Golang because of the project.
+                    </p>
+                </div>
+            </Project>
             <Project title="Shortnr" code="https://github.com/laytan/shortnr" deployed="https://shortnr.laytanlaats.com" left={false}>
                 <div class="slide-content" slot="slide-content">
                     <img
@@ -209,7 +243,7 @@
                 </span>
                 <div slot="description">
                     <p class="pb-3">
-                        Fully realtime multi-user todo app. 
+                        Fully realtime multi-user todo app.
                         Create a todo list and give access to other users. All changes are made realtime.
                     </p>
                     <p class="pb-3">
@@ -234,7 +268,7 @@
                     alt="The starting view of my personal website" />
                 </div>
                 <div class="slide-content" slot="slide-content">
-                    <img 
+                    <img
                     src="personal-site/personal-site-projects.png"
                     alt="A view after scrolling a little with projects header and one project: shortnr" />
                 </div>
@@ -395,7 +429,7 @@
                         viewBox="0 0 448 512"><path
                             fill="currentColor"
                             d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z" /></svg>
-                </a> 
+                </a>
                 </li>
             </ul>
             <ul class="flex justify-center gap-2 py-2 list-inside">
