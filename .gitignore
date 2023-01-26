@@ -1,5 +1,5 @@
 dist
 dev
 node_modules
-.cache
+.parcel-cache
 .vercel

@@ -1,22 +1,26 @@
-const { colors } = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors');
 
 module.exports = {
-    purge: false,
+    content: [
+        './src/**/*.{svelte,html,js}',
+    ],
     theme: {
         fontFamily: {
             display: ['Archivo Black', 'Impact', 'sans-serif'],
             body: ['Roboto', 'sans-serif'],
         },
         colors: {
+            transparent: 'transparent',
+            current: 'currentColor',
             black: colors.black,
             white: colors.white,
             gray: colors.gray,
             blue: {
-                default: '#375fc0',
+                DEFAULT: '#375fc0',
                 dark: '#284893',
             },
             pink: {
-                default: '#ff304f',
+                DEFAULT: '#ff304f',
                 dark: '#db2944',
             },
             tech: {

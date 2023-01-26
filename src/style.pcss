@@ -4,27 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* purgecss start ignore */
-.carousel .right, .carousel .left {
-    @apply w-auto h-auto !important;
-}
-
-.carousel ul li {
-    @apply bg-black opacity-50 !important;
-}
-
-.carousel ul li.active {
-    @apply opacity-100 !important;
-}
-
-.carousel .slides {
-    @apply border-4 border-pink-to-blue !important;
-}
-/* purgecss end ignore */
-
 @layer components {
     .btn {
-        @apply px-3 py-1 tracking-wide rounded-sm font-display whitespace-no-wrap;
+        @apply px-3 py-1 tracking-wide rounded-sm font-display whitespace-nowrap;
     }
 
     .btn:focus {
@@ -46,6 +28,24 @@
     .btn-pink:hover, .btn-pink:focus {
         @apply bg-pink-dark;
     }
+
+    /* purgecss start ignore */
+    .carousel .right, .carousel .left {
+        @apply w-auto h-auto !important;
+    }
+    
+    .carousel ul li {
+        @apply bg-black opacity-50 !important;
+    }
+    
+    .carousel ul li.active {
+        @apply opacity-100 !important;
+    }
+    
+    .carousel .slides {
+        @apply border-4 border-pink-to-blue !important;
+    }
+    /* purgecss end ignore */
 }
 
 @layer utilities {
