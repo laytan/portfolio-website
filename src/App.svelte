@@ -6,7 +6,7 @@
     import Badge from "./components/Badge.svelte";
     import { onMount } from "svelte";
 
-    let loadedClass = "";
+    let loadedClass = "scale-y-0 md:scale-y-100 md:scale-x-0";
     onMount(() =>
         setTimeout(() => (loadedClass = "scale-y-100 md:scale-x-100"))
     );
@@ -135,30 +135,28 @@
                 <button class="text-blue" on:click={scrollTo('email-me')}>Contact me</button> for info about my proffesional experience.
             </p>
             <Project title="Featured Channels Feed" code="https://github.com/laytan/featured-channels-feed" deployed="https://featured-channels-feed.laytanlaats.com">
-                <div class="slide-content" slot="slide-content">
-                    <img
-                    src="featured-channels-feed/screen1.png"
-                    alt="Featured Channels Feed homepage" />
-                </div>
-                <div class="slide-content" slot="slide-content">
-                    <img
-                    src="featured-channels-feed/screen2.png"
-                    alt="Featured Channels Feed Results for Linus Tech Tips channel" />
-                </div>
-                <div class="slide-content" slot="slide-content">
-                    <img
-                        src="featured-channels-feed/screen3.png"
-                        alt="Featured Channels Feed loading modal" />
-                </div>
-                <span slot="badges">
+                <svelte:fragment slot="slide-content">
+                    <div class="slide-content">
+                        <img
+                        src="featured-channels-feed/screen1.png"
+                        alt="Featured Channels Feed homepage" />
+                    </div>
+                    <div class="slide-content">
+                        <img
+                        src="featured-channels-feed/screen2.png"
+                        alt="Featured Channels Feed Results for Linus Tech Tips channel" />
+                    </div>
+                    <div class="slide-content">
+                        <img
+                            src="featured-channels-feed/screen3.png"
+                            alt="Featured Channels Feed loading modal" />
+                    </div>
+                </svelte:fragment>
+                <svelte:fragment slot="badges">
                     <Badge className="bg-tech-vuejs">VueJS</Badge>
-                </span>
-                <span slot="badges">
                     <Badge className="bg-tech-golang">Golang</Badge>
-                </span>
-                <span slot="badges">
                     <Badge className="bg-tech-docker">Docker</Badge>
-                </span>
+                </svelte:fragment>
                 <div slot="description">
                     <p class="pb-3">
                         Featured Channels Feed aggregates the latest videos of the featured channels of a channel.
@@ -169,30 +167,28 @@
                 </div>
             </Project>
             <Project title="Shortnr" code="https://github.com/laytan/shortnr" deployed="https://shortnr.laytanlaats.com" left={false}>
-                <div class="slide-content" slot="slide-content">
-                    <img
-                    src="shortnr/shortnr-dashboard.png"
-                    alt="Shortnr dashboard with all links, a new link form and statistics" />
-                </div>
-                <div class="slide-content" slot="slide-content">
-                    <img
-                    src="shortnr/shortnr-home.png"
-                    alt="Shortnr homepage with an introduction" />
-                </div>
-                <div class="slide-content" slot="slide-content">
-                    <img
-                        src="shortnr/shortnr-login.png"
-                        alt="Shortnr login page" />
-                </div>
-                <span slot="badges">
+                <svelte:fragment slot="slide-content">
+                    <div class="slide-content">
+                        <img
+                        src="shortnr/shortnr-dashboard.png"
+                        alt="Shortnr dashboard with all links, a new link form and statistics" />
+                    </div>
+                    <div class="slide-content">
+                        <img
+                        src="shortnr/shortnr-home.png"
+                        alt="Shortnr homepage with an introduction" />
+                    </div>
+                    <div class="slide-content">
+                        <img
+                            src="shortnr/shortnr-login.png"
+                            alt="Shortnr login page" />
+                    </div>
+                </svelte:fragment>
+                <svelte:fragment slot="badges">
                     <Badge className="bg-tech-vuejs">VueJS</Badge>
-                </span>
-                <span slot="badges">
                     <Badge className="bg-tech-golang">Golang</Badge>
-                </span>
-                <span slot="badges">
                     <Badge className="bg-tech-sql">MySQL</Badge>
-                </span>
+                </svelte:fragment>
                 <div slot="description">
                     <p class="pb-3">
                         URL shortener in VueJS on the front-end and Go on the back-end.
@@ -209,38 +205,34 @@
             title="Todo Collab"
             code="https://github.com/laytan/todo-collab"
             left={true}>
-                <div class="slide-content" slot="slide-content">
-                    <img
-                    src="todo-collab/home.png"
-                    alt="Home page" />
-                </div>
-                <div class="slide-content" slot="slide-content">
-                    <img
-                    src="todo-collab/login.png"
-                    alt="Login page" />
-                </div>
-                <div class="slide-content" slot="slide-content">
-                    <img
-                    src="todo-collab/register.png"
-                    alt="Register page" />
-                </div>
-                <div class="slide-content" slot="slide-content">
-                    <img
-                    src="todo-collab/empty-list.png"
-                    alt="An empty list" />
-                </div>
-                <span slot="badges">
+                <svelte:fragment slot="slide-content">
+                    <div class="slide-content">
+                        <img
+                        src="todo-collab/home.png"
+                        alt="Home page" />
+                    </div>
+                    <div class="slide-content">
+                        <img
+                        src="todo-collab/login.png"
+                        alt="Login page" />
+                    </div>
+                    <div class="slide-content">
+                        <img
+                        src="todo-collab/register.png"
+                        alt="Register page" />
+                    </div>
+                    <div class="slide-content">
+                        <img
+                        src="todo-collab/empty-list.png"
+                        alt="An empty list" />
+                    </div>
+                </svelte:fragment>
+                <svelte:fragment slot="badges">
                     <Badge className="bg-tech-vuejs">Vue</Badge>
-                </span>
-                <span slot="badges">
                     <Badge className="bg-tech-nodejs">Node</Badge>
-                </span>
-                <span slot="badges">
                     <Badge className="bg-tech-feathers">Feathers</Badge>
-                </span>
-                <span slot="badges">
                     <Badge className="bg-tech-sql">MySQL</Badge>
-                </span>
+                </svelte:fragment>
                 <div slot="description">
                     <p class="pb-3">
                         Fully realtime multi-user todo app.
@@ -262,22 +254,22 @@
             deployed="https://laytanlaats.com"
             left={false}
             controlColorClass="text-white">
-                <div class="slide-content" slot="slide-content">
-                    <img
-                    src="personal-site/personal-site-top.png"
-                    alt="The starting view of my personal website" />
-                </div>
-                <div class="slide-content" slot="slide-content">
-                    <img
-                    src="personal-site/personal-site-projects.png"
-                    alt="A view after scrolling a little with projects header and one project: shortnr" />
-                </div>
-                <span slot="badges">
+                <svelte:fragment slot="slide-content">
+                    <div class="slide-content">
+                        <img
+                        src="personal-site/personal-site-top.png"
+                        alt="The starting view of my personal website" />
+                    </div>
+                    <div class="slide-content">
+                        <img
+                        src="personal-site/personal-site-projects.png"
+                        alt="A view after scrolling a little with projects header and one project: shortnr" />
+                    </div>
+                </svelte:fragment>
+                <svelte:fragment slot="badges">
                     <Badge className="bg-tech-svelte">Svelte</Badge>
-                </span>
-                <span slot="badges">
                     <Badge className="bg-tech-tailwind">Tailwind</Badge>
-                </span>
+                </svelte:fragment>
                 <div slot="description">
                     <p class="pb-3">
                         Inception! My portfolio site aka the site you are looking at right now.
@@ -293,22 +285,22 @@
             deployed="https://laytanl.itch.io/get-of-that-damn-island"
             left={true}
             controlColorClass="text-white">
-                <div class="slide-content" slot="slide-content">
-                    <img
-                    src="get-of-that-damn-island/title-screen.png"
-                    alt="The title screen" />
-                </div>
-                <div class="slide-content" slot="slide-content">
-                    <img
-                    src="get-of-that-damn-island/tutorial.png"
-                    alt="The first tutorial level with the text: The island is unstable! Get out by pushing the spaceship to the airstrip." />
-                </div>
-                <span slot="badges">
+                <svelte:fragment slot="slide-content">
+                    <div class="slide-content">
+                        <img
+                        src="get-of-that-damn-island/title-screen.png"
+                        alt="The title screen" />
+                    </div>
+                    <div class="slide-content">
+                        <img
+                        src="get-of-that-damn-island/tutorial.png"
+                        alt="The first tutorial level with the text: The island is unstable! Get out by pushing the spaceship to the airstrip." />
+                    </div>
+                </svelte:fragment>
+                <svelte:fragment slot="badges">
                     <Badge className="bg-gray-800">Unity</Badge>
-                </span>
-                <span slot="badges">
                     <Badge className="bg-tech-csharp">C#</Badge>
-                </span>
+                </svelte:fragment>
                 <div slot="description">
                     <p class="pb-3">
                         My submission to the Ludum Dare 42 Game Jam:
@@ -326,27 +318,27 @@
             code="https://github.com/laytan/Crammed-defense-GMTKJam2018"
             deployed="https://laytanl.itch.io/crammed-defense"
             left={false}>
-                <div class="slide-content" slot="slide-content">
-                    <img
-                    src="crammed-defense/tall.png"
-                    alt="Tower of snipers, machinge guns and heal blocks" />
-                </div>
-                <div class="slide-content" slot="slide-content">
-                    <img
-                    src="crammed-defense/falling.png"
-                    alt="Tower falling over because of inbalance" />
-                </div>
-                <div class="slide-content" slot="slide-content">
-                    <img
-                    src="crammed-defense/taller.png"
-                    alt="Very tall tower of snipers" />
-                </div>
-                <span slot="badges">
+                <svelte:fragment slot="slide-content">
+                    <div class="slide-content">
+                        <img
+                        src="crammed-defense/tall.png"
+                        alt="Tower of snipers, machinge guns and heal blocks" />
+                    </div>
+                    <div class="slide-content">
+                        <img
+                        src="crammed-defense/falling.png"
+                        alt="Tower falling over because of inbalance" />
+                    </div>
+                    <div class="slide-content">
+                        <img
+                        src="crammed-defense/taller.png"
+                        alt="Very tall tower of snipers" />
+                    </div>
+                </svelte:fragment>
+                <svelte:fragment slot="badges">
                     <Badge className="bg-gray-800">Unity</Badge>
-                </span>
-                <span slot="badges">
                     <Badge className="bg-tech-csharp">C#</Badge>
-                </span>
+                </svelte:fragment>
                 <div slot="description">
                     <p class="pb-3">
                         My submission to the Game Makers Toolkit Jam 2018:
