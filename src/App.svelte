@@ -25,11 +25,6 @@
                 <li class="pr-3">
                     <button on:click={scrollTo('projects')}>Projects</button>
                 </li>
-                <li>
-                    <a href="/resume-laytan-laats.pdf" target="_BLANK" rel="noopener noreferrer">
-                        Resume
-                    </a>
-                </li>
             </ul>
         </div>
         <ul class="flex items-end text-blue md:text-pink">
